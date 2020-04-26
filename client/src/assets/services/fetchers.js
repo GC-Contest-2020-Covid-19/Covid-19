@@ -6,4 +6,13 @@ const fetchSummary = async () => {
 	return data;
 };
 
-export default { fetchSummary };
+const fetchDayoneByCountry = async (country) => {
+	const { data } = await axios.get(`${BASEURL}/dayone/country/${country}`);
+	return data;
+};
+const fetchAllCountries = async () => {
+	const { data } = await axios.get(`${BASEURL}/countries`);
+	return data;
+};
+
+export default { fetchSummary, fetchDayoneByCountry, fetchAllCountries };

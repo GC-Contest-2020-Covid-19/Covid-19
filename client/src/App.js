@@ -1,60 +1,47 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import Navbar from "./components/Navbar";
-import { setSummary } from "./redux/reducers/summaryReducer";
-import Summary from "./components/Summary";
 import "./assets/styles/main.css";
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+//summary chart
+import DisplaySummary from "./components/DisplaySummary";
+
+//progression by country
+import ProgressionByCountry from "./components/charts/ProgressionByCountry";
+import ProgressionByCountrySelect from "./components/ProgressionByCountrySelect";
 
 // map
-import { Input } from './components/Map/Input'
-import { CoronaMap } from './components/Map/Map'
+import { Input } from "./components/Map/Input";
+import { CoronaMap } from "./components/Map/Map";
 
-
-function App({ setSummary, summary }) {
-	useEffect(() => {
-		setSummary();
-	}, []);
-
+function App() {
 	return (
 		<Router>
 			<header>
 				<Navbar />
-				{/* basic info about the site */}
+				{/* Add basic info about the site */}
 			</header>
-			
-			<main className='flex flex-wrap'>
-				<Route exact path='/' render={ props => (
-						<>
-							{summary?.Countries?.map((country) => (
-								<Summary key={country.CountryCode} place={country} />
-							))}
-						</>
-					)}>
+
+			<main className='w-screen h-screen'>
+				<Route exact path='/' render={() => <h1>Home Page!!!</h1>} />
+
+				<Route exact path='/progression'>
+					<ProgressionByCountrySelect />
+					<ProgressionByCountry />
 				</Route>
-				
+
+				<Route exact path='/summary' component={DisplaySummary} />
+
+				{/* display useful information on a map*/}
+				<Route path='/map'>
+					<Input />
+					<CoronaMap />
+				</Route>
 			</main>
-			<div className="map">
-				{/* display useful information on a map*/}		
-				<Route path='/map' render={ props => (
-					<>
-						<Input />
-						<CoronaMap />
-					</>
-				)}>
-				</Route>
-			</div>		
+
 			<footer>{/* contact devs, about, github */}</footer>
 		</Router>
 	);
 }
 
-const mapStateToProps = ({ summary }) => {
-	return {
-		summary,
-	};
-};
-
-const mapDispatchToProps = { setSummary };
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

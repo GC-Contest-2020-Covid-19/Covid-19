@@ -1,20 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	return (
 		<nav className='flex'>
-			<a className='mr-auto' href='#dud'>
+			<Link className='mr-auto ml-5' to='/'>
 				SVG logo
-			</a>
+			</Link>
 			<ul className='flex'>
-				<li>
-					<a href='#dud'>Link 1</a>
+				<li className='mr-5'>
+					<Link to='/summary'>Summary</Link>
 				</li>
-				<li>
-					<a href='#dud'>Link 2</a>
+				<li className='mr-5'>
+					<Link to='/progression'>Progression</Link>
 				</li>
-				<li>
-					<a href='#dud'>Link 3</a>
+				<li className='mr-5'>
+					<Link to='/map'>Map</Link>
 				</li>
 			</ul>
 		</nav>
