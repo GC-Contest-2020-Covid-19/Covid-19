@@ -31,4 +31,5 @@ credentials.js
 node_modules
 
 # vscode
-.vscode
+.vscode/
+.vscode/launch.json
