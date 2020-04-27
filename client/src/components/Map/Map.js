@@ -28,6 +28,7 @@ export const CoronaMap = () => {
         if (testStations.testStations.length > 0 || foodBanks.foodBanks.length > 0){
 
             // finished fetching, map will be loaded
+            console.log(testStations.testStations.length, testStations.results, foodBanks.foodBanks.length, foodBanks.results)
             if (testStations.testStations.length === testStations.results && foodBanks.foodBanks.length === foodBanks.results){
 
                 // process icons

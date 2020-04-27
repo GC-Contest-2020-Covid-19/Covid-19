@@ -26,6 +26,13 @@ export const changeTestResults = (amount) => {
     }
 }
 
+export const addTestResult = (amount) => {
+    return {
+        type: 'ADD_TEST_RESULT',
+        payload: amount
+    }
+}
+
 // foodBanks
 export const addFoodBank = (foodBank) => {
     return {

@@ -7,7 +7,6 @@ module.exports = {
         
         // open website
         const page = await browser.newPage()
-        console.log('URL: ', `https://www.foodbanks.net/search.php?q=${city}`)
         await page.goto(`https://www.foodbanks.net/search.php?q=${city}`)
     
         // get data from table
