@@ -29,3 +29,6 @@ credentials.js
 
 # Server
 node_modules
+
+# vscode
+.vscode

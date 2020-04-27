@@ -86,6 +86,14 @@ const mapReducer = (state = initState, action) => {
                     results: action.payload
                 }
             }
+        case 'ADD_FOOD_RESULT':
+            return {
+                ...state,
+                foodBanks: {
+                    ...state.foodBanks,
+                    results: action.payload + state.foodBanks.results 
+                }
+            }
         case 'CLEAR_FOOD_BANKS':
             return{
                 ...state,

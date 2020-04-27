@@ -48,6 +48,13 @@ export const changeFoodStatus = (status) => {
     }
 }
 
+export const addFoodResult = (amount) => {
+    return {
+        type: 'ADD_TEST_RESULT',
+        payload: amount
+    }
+}
+
 export const changeFoodResults = (amount) => {
     return {
         type: 'CHANGE_FOOD_RESULTS',

@@ -19,16 +19,17 @@ export const CoronaMap = () => {
     const user = useSelector(state => state.user)
     
     // last request was unsuccessful 
-    if (!(testStations.status || foodBanks.status)) {
+    if (!(testStations.status || foodBanks.status) || (testStations.results === 0 && foodBanks.results === 0) ) {
         return (
-            <h3>Nothing found.</h3>
+            <div className={'text-center block'}>
+                <h3>Nothing found.</h3>
+            </div>
         )
     }else{
         // last request was successful 
         if (testStations.testStations.length > 0 || foodBanks.foodBanks.length > 0){
 
             // finished fetching, map will be loaded
-            console.log(testStations.testStations.length, testStations.results, foodBanks.foodBanks.length, foodBanks.results)
             if (testStations.testStations.length === testStations.results && foodBanks.foodBanks.length === foodBanks.results){
 
                 // process icons
