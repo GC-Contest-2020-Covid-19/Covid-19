@@ -1,9 +1,10 @@
 const express = require('express')
 const scraper = require('./scraper.js')
 const Geocoder = require('node-geocoder')
-const keys = require('./credentials')
+const fetch = require('node-fetch')
 
 const app = express()
+
 
 // allow async requests
 const asyncMiddleware = fn => (req, res, next) => {
@@ -27,7 +28,7 @@ app.get('/api/foodbanks/:city', asyncMiddleware(async (req, res) =>{
     if (data[0].length > 0){
         res.json({'success': 'true', 'names': data[0], 'addresses': data[1], 'phones': data[2]});
     }else{
-        res.json({'success': 'false'});
+        res.json({'success': false});
     }
     
 }))
@@ -36,7 +37,7 @@ app.get('/api/foodbanks/:city', asyncMiddleware(async (req, res) =>{
 
 const options = {
     provider: 'opencage',
-    apiKey: keys.OPENCAGE_KEY
+    apiKey: process.env.OPENCAGE_KEY
 }
 
 const geocoder = Geocoder(options)
@@ -53,7 +54,7 @@ app.get('/api/geocoding/:address', asyncMiddleware(async (req, res) => {
             res.json({'success': true, 'data': data})
         })
         .catch((error) => {
-            console.log('ERROR: ', error, 'REQUESTED: ', req.params.address)
+            console.log(error)
             res.json({'success': false})
         })
 }))
@@ -63,7 +64,27 @@ app.get('/api/geocoding_reverse/:lat/:lng', asyncMiddleware(async (req, res) => 
     res.json(data)
 }))
 
+// charity
+const CHARITY_ID = process.env.CHARITY_ID
+const CHARITY_KEY = process.env.CHARITY_KEY
 
+app.get('/api/charity/:city', asyncMiddleware(async (req, res) => {
+    fetch(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CHARITY_ID}&app_key=${CHARITY_KEY}&pageSize=20&city=${req.params.city}&sort=RATING:DESC&categoryID=5`)
+        .then(response => {
+            if (!response.ok){
+                throw new Error('Network response was not ok');
+            }
+            return response
+        })    
+        .then(response => response.json())
+        .then(json => {
+            res.json({'success': true, 'data': json})
+        })
+        .catch((error) => {
+            console.log(error)
+            res.json({'success': false})
+        })
+}))
 
 // start server
 const port = 5000

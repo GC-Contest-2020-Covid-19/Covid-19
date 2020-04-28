@@ -11,8 +11,12 @@ import ProgressionByCountry from "./components/charts/ProgressionByCountry";
 import ProgressionByCountrySelect from "./components/ProgressionByCountrySelect";
 
 // map
-import { Input } from "./components/Map/Input";
+import { MapInput } from "./components/Map/MapInput";
 import { CoronaMap } from "./components/Map/Map";
+
+// charities
+import { CharityInput } from './components/Charity/CharityInput'
+import { CharityList } from './components/Charity/CharityList'
 
 function App() {
 	return (
@@ -34,8 +38,14 @@ function App() {
 
 				{/* display useful information on a map*/}
 				<Route path='/map'>
-					<Input />
+					<MapInput />
 					<CoronaMap />
+				</Route>
+
+				{/* diplay charities */}
+				<Route path='/help'>
+					<CharityInput />
+					<CharityList />
 				</Route>
 			</main>
 

@@ -11,7 +11,7 @@ import { changeCoordinates, changeUsState, changeCity } from '../../redux/action
 
 const SERVER_PATH = 'http://127.0.0.1:5000/'
 
-export const Input = () => {
+export const MapInput = () => {
     const dispatch = useDispatch()
     
     const HandleClick = () => {
@@ -97,7 +97,7 @@ export const Input = () => {
                         .then(json => {
                             
                             // errorcheck
-                            if (json === false || json.success === 'false'){
+                            if (json === false || json.success === false){
                                 dispatch(clearFoodBanks())
                                 dispatch(changeFoodResults(0))
                                 dispatch(changeFoodStatus(false))
@@ -131,8 +131,9 @@ export const Input = () => {
         }
         
     return (
-        <div>
+        <div className={'text-center block'}>
            <button className={'bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full mx-auto block'} onClick={ HandleClick }>Fetch information</button>
+           <h3>We currently only support the USA.</h3>
         </div>       
     )
 }
