@@ -13,12 +13,12 @@ import ProgressionByCountry from "./components/charts/ProgressionByCountry";
 import ProgressionByCountrySelect from "./components/ProgressionByCountrySelect";
 
 // map
-// import { MapInput } from "./components/Map/MapInput";
-// import { CoronaMap } from "./components/Map/Map";
+import { MapInput } from "./components/Map/MapInput";
+import { CoronaMap } from "./components/Map/Map";
 
 // charities
-// import { CharityInput } from "./components/Charity/CharityInput";
-// import { CharityList } from "./components/Charity/CharityList";
+import { CharityInput } from "./components/Charity/CharityInput";
+import { CharityList } from "./components/Charity/CharityList";
 
 function App() {
 	return (
@@ -35,16 +35,16 @@ function App() {
 			</Route>
 
 			{/* display useful information on a map*/}
-			{/* <Route path='/map'>
+			<Route path='/map'>
 				<MapInput />
 				<CoronaMap />
-			</Route> */}
+			</Route>
 
 			{/* diplay charities */}
-			{/* <Route path='/help'>
+			<Route path='/help'>
 				<CharityInput />
 				<CharityList />
-			</Route> */}
+			</Route>
 		</Router>
 	);
 }
