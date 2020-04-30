@@ -5,7 +5,6 @@ const Navbar = () => {
 	const [active, setActive] = useState(false);
 	const isActive = () => (active ? "is-active" : "");
 	return (
-<<<<<<< HEAD
 		<nav className='navbar' role='navigation' aria-label='main navigation'>
 			<div className='container'>
 				<div className='navbar-brand'>
@@ -43,29 +42,14 @@ const Navbar = () => {
 								Map
 							</Link>
 						</li>
+						<li className='navbar-item'>
+							<Link className='navbar-link is-arrowless' to='/help'>
+								Help
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>
-=======
-		<nav className='flex'>
-			<Link className='mr-auto ml-5' to='/'>
-				SVG logo
-			</Link>
-			<ul className='flex'>
-				<li className='mr-5'>
-					<Link to='/summary'>Summary</Link>
-				</li>
-				<li className='mr-5'>
-					<Link to='/progression'>Progression</Link>
-				</li>
-				<li className='mr-5'>
-					<Link to='/map'>Map</Link>
-				</li>
-				<li className='mr-5'>
-					<Link to='/help'>Help</Link>
-				</li>
-			</ul>
->>>>>>> e464732ee02fb0cec5e7da0e68f68ae37b8aadf9
 		</nav>
 	);
 };
