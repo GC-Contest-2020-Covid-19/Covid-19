@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import "./assets/styles/main.css";
+import Homepage from "./components/Homepage";
+import "./App.scss";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 //summary chart
@@ -17,29 +19,22 @@ import { CoronaMap } from "./components/Map/Map";
 function App() {
 	return (
 		<Router>
-			<header>
-				<Navbar />
-				{/* Add basic info about the site */}
-			</header>
+			<Navbar />
 
-			<main className='w-screen h-screen'>
-				<Route exact path='/' render={() => <h1>Home Page!!!</h1>} />
+			<Route exact path='/' component={Homepage} />
 
-				<Route exact path='/progression'>
-					<ProgressionByCountrySelect />
-					<ProgressionByCountry />
-				</Route>
+			<Route exact path='/progression'>
+				<ProgressionByCountrySelect />
+				<ProgressionByCountry />
+			</Route>
 
-				<Route exact path='/summary' component={DisplaySummary} />
+			<Route exact path='/summary' component={DisplaySummary} />
 
-				{/* display useful information on a map*/}
-				<Route path='/map'>
-					<Input />
-					<CoronaMap />
-				</Route>
-			</main>
-
-			<footer>{/* contact devs, about, github */}</footer>
+			{/* display useful information on a map*/}
+			<Route path='/map'>
+				<Input />
+				<CoronaMap />
+			</Route>
 		</Router>
 	);
 }

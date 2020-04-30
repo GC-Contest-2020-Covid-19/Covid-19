@@ -5,31 +5,41 @@ import { setSummary } from "../redux/reducers/summaryReducer";
 
 const DisplaySummary = ({ summary, setSummary }) => {
 	const [value, setValue] = useState("");
+	const [searchTerm, setSearchTerm] = useState("");
 	useEffect(() => {
 		setSummary();
 	}, []);
 	const handleChange = ({ target }) => {
 		setValue(target.value);
 	};
+	const handleSubmit = (evt) => {
+		evt.preventDefault();
+		setSearchTerm(value);
+		setValue("");
+	};
 	return (
-		<div className='flex flex-col items-center'>
+		<div className=''>
 			<div id='countries'>
-				<h3 className='text-center text-xl'>Filter countries by search</h3>
-				<input
-					className='block focus:outline-none focus:shadow-outline border rounded-lg mx-auto mb-4'
-					onChange={handleChange}
-					value={value}
-					type='text'
-				/>
-				{value
+				<h3 className=''>Filter countries by search</h3>
+				<form onSubmit={handleSubmit}>
+					<input
+						className=''
+						onChange={handleChange}
+						value={value}
+						type='text'
+					/>
+					<input type='submit' value='Search' />
+				</form>
+
+				{searchTerm
 					? summary?.Countries?.filter((country) =>
-							country.Country.toLowerCase().includes(value)
+							country.Country.toLowerCase().includes(searchTerm)
 					  ).map((country) => (
 							<SummaryChart key={country.CountryCode} place={country} />
 					  ))
 					: null}
 			</div>
-			<div className='text-center' id='global'>
+			<div className='' id='global'>
 				{summary?.Global ? <SummaryChart place={summary.Global} /> : null}
 			</div>
 		</div>

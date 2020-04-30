@@ -38,13 +38,13 @@ const SummaryChart = ({ place }) => {
 		},
 	};
 	return (
-		<div className='border rounded-lg text-center mb-4 mx-auto'>
+		<div className=''>
 			{place.Country ? (
-				<h3 className='text-2xl'>{place.Country}</h3>
+				<h3 className=''>{place.Country}</h3>
 			) : (
-				<h3 className='text-2xl'>Global</h3>
+				<h3 className=''>Global</h3>
 			)}
-			<div className='flex justify-around'>
+			<div className=''>
 				<div id='new'>
 					<Doughnut data={data.new} />
 				</div>

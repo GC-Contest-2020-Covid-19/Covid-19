@@ -17,10 +17,10 @@ const ProgressionByCountrySelect = ({
 		setUpFromDayOne(evt.target.value);
 	};
 	return (
-		<div className='ml-1 w-3/12 md:w-6/12'>
-			<h2 className='text-l'>Select a country to show progression</h2>
+		<div className=''>
+			<h2 className=''>Select a country to show progression</h2>
 			<select
-				className='w-full border rounded my-3'
+				className=''
 				value={value}
 				onChange={handleChange}
 				name='countries'
