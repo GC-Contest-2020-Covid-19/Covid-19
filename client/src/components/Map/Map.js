@@ -4,7 +4,7 @@ import React from 'react'
 import L from 'leaflet'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import leafBlue from '../../../node_modules/leaflet/dist/images/marker-icon.png'
-import leafRed from '../../../node_modules/leaflet/dist/images/marker_red.png';
+import leafRed from '../../assets/images/marker_red.png';
 import leafShadow from '../../../node_modules/leaflet/dist/images/marker-shadow.png'
 import 'leaflet/dist/leaflet.css'
 

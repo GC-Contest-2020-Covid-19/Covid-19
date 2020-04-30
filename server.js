@@ -34,7 +34,6 @@ app.get('/api/foodbanks/:city', asyncMiddleware(async (req, res) =>{
 }))
 
 // Geocoding
-
 const options = {
     provider: 'opencage',
     apiKey: process.env.OPENCAGE_KEY
@@ -68,8 +67,8 @@ app.get('/api/geocoding_reverse/:lat/:lng', asyncMiddleware(async (req, res) => 
 const CHARITY_ID = process.env.CHARITY_ID
 const CHARITY_KEY = process.env.CHARITY_KEY
 
-app.get('/api/charity/:city', asyncMiddleware(async (req, res) => {
-    fetch(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CHARITY_ID}&app_key=${CHARITY_KEY}&pageSize=20&city=${req.params.city}&sort=RATING:DESC&categoryID=5`)
+app.get('/api/charity/:city/:amount', asyncMiddleware(async (req, res) => {
+    fetch(`https://api.data.charitynavigator.org/v2/Organizations?app_id=${CHARITY_ID}&app_key=${CHARITY_KEY}&pageSize=${req.params.amount}&city=${req.params.city}&sort=RATING:DESC&categoryID=5`)
         .then(response => {
             if (!response.ok){
                 throw new Error('Network response was not ok');

@@ -10,21 +10,33 @@ export const CharityInput = () => {
     
     const dispatch = useDispatch()
 
-    // hooks for the input field
-    const [state, setState] = useState('')
+    // hooks for the input fields
+    const [city, setCity] = useState('')
+    const [amount, setAmount] = useState('')
+
+    // hook for error message
+    const [showError, setError] = useState(false)
+
 
     const SubmitHandler = (e) => {
         e.preventDefault()
         dispatch(clearCharities())
-        dispatch(changeCharityStatus(true))
         
+        // check the inputed number
+        if (isNaN(amount)){
+            setError(true)
+            return false
+        }   
+        
+        dispatch(changeCharityStatus(true))
+
         // fetch charities in the inputed city and add them to the store
-        getCharities(state)
+        getCharities(city, amount)
             .then(json => {
                 if (json !== false && json.success !== false){
                     for (let i = 0; i < json.data.length; i++){
                         dispatch(addCharity(createCharity(json.data[i])))
-                    }
+                    } 
                 }else{
                     dispatch(changeCharityStatus(false))
                 }
@@ -40,15 +52,17 @@ export const CharityInput = () => {
             <h3 className='text-3xl text-center'>Charity</h3>
             <p className='text-center mb-2'>We currently only support the USA.</p>
             <form onSubmit={SubmitHandler} className='text-center block mb-8'>
-                <input type="text" id="city" placeholder="City..." value={state} onChange={(e) => setState(e.target.value)}/>
+                <input type="text" id="city" placeholder="City..." value={city} onChange={(e) => setCity(e.target.value)}/>
+                <input type="text" id="amount" placeholder="Amount of Results..." value={amount} onChange={(e) => setAmount(e.target.value)}/>
                 <button type="submit">Search</button>
             </form>
+            {showError && (<p className='text-center'>Please input a valid number as amount.</p>)}
         </div>
     )
 }
 
-function getCharities(city){
-    return fetch(SERVER_PATH + `api/charity/${city}`)
+function getCharities(city, amount){
+    return fetch(SERVER_PATH + `api/charity/${city}/${amount}`)
             .then(response => {
                 if (!response.ok){
                     throw new Error('Network response was not ok');
