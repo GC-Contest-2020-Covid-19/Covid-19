@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
-import "./App.scss";
+import "./assets/styles/App.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -45,6 +45,7 @@ function App() {
 				<CharityInput />
 				<CharityList />
 			</Route>
+			<Route path='/info' />
 		</Router>
 	);
 }

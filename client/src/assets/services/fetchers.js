@@ -7,7 +7,9 @@ const fetchSummary = async () => {
 };
 
 const fetchDayoneByCountry = async (country) => {
-	const { data } = await axios.get(`${BASEURL}/dayone/country/${country}`);
+	const { data } = await axios.get(
+		`${BASEURL}/total/dayone/country/${country}`
+	);
 	return data;
 };
 const fetchAllCountries = async () => {

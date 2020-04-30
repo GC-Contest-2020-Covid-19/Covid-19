@@ -8,20 +8,19 @@ const ProgressionByCountrySelect = ({
 	setUpFromDayOne,
 	setUpallCountries,
 }) => {
+	const [value, setValue] = useState("");
 	useEffect(() => {
 		setUpallCountries();
 	}, []);
-	const [value, setValue] = useState("");
 	const handleChange = (evt) => {
 		setValue(evt.target.value);
 		setUpFromDayOne(evt.target.value);
 	};
 	return (
-		<div className='custom-m-5'>
+		<div className='custom-m-3'>
 			<h2 className='is-size-2'>Select a country to show progression</h2>
-			<div className="select">
+			<div className='select'>
 				<select
-					className=''
 					value={value}
 					onChange={handleChange}
 					name='countries'

@@ -38,21 +38,22 @@ const SummaryChart = ({ place }) => {
 		},
 	};
 	return (
-		<div className=''>
+		<div className='box custom-mb-5'>
 			{place.Country ? (
-				<h3 className=''>{place.Country}</h3>
+				<h3 className='is-size-2'>{place.Country}</h3>
 			) : (
-				<h3 className=''>Global</h3>
+				<h3 className='is-size-2'>Worldwide</h3>
 			)}
-			<div className=''>
-				<div id='new'>
-					<Doughnut data={data.new} />
+			<small>Click on parameters to select or unselect them</small>
+			<div className='columns'>
+				<div className='column is-half' id='new'>
+					<Doughnut options={{ responsive: true }} data={data.new} />
 				</div>
-				<div id='total'>
-					<Doughnut data={data.total} />
+				<div className='column is-half' id='total'>
+					<Doughnut options={{ responsive: true }} data={data.total} />
 				</div>
 			</div>
-			<p>As of {moment(place.Date).format("MMMM Do YYYY, h:mm:ss a")}</p>
+			<p>As of {moment(place.Date).format("MMMM Do YYYY, h:mm a")}</p>
 		</div>
 	);
 };

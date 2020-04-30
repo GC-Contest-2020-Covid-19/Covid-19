@@ -14,17 +14,17 @@ const Footer = () => {
 									<h3 className='subtitle has-text-light'>Features</h3>
 									<ul>
 										<li>
-											<Link to='/summary' className='is-link'>
+											<Link to='/summary' className='has-text-light'>
 												Summary chart
 											</Link>
 										</li>
 										<li>
-											<Link to='/progression' className='is-link'>
+											<Link to='/progression' className='has-text-light'>
 												Progression chart
 											</Link>
 										</li>
 										<li>
-											<Link to='/map' className='is-link'>
+											<Link to='/map' className='has-text-light'>
 												Food Drives
 											</Link>
 										</li>
@@ -36,12 +36,12 @@ const Footer = () => {
 										<li>
 											<Link
 												to='https://github.com/orgs/GC-Contest-2020-Covid-19/people'
-												className='is-link'>
+												className='has-text-light'>
 												Developers
 											</Link>
 										</li>
 										<li>
-											<Link to='/about' className='is-link'>
+											<Link to='/about' className='has-text-light'>
 												About
 											</Link>
 										</li>
