@@ -12,7 +12,7 @@ export const CharityList = () => {
         // request was successful
         if (charity.status === true){
            return (
-                <div className={'text-center block'}>
+                <div className={'container'}>
                     <div>{charity.charities.map((c) => (<Charity key={c.id} charity={c} />))}</div>
                 </div>
            )
@@ -21,7 +21,7 @@ export const CharityList = () => {
         // loading
         if (charity.status === true){
             return (
-                <h3 className='text-center'>Loading...</h3>
+                <h3 className='container'>Loading...</h3>
             )
         }else{
             // nothing requested

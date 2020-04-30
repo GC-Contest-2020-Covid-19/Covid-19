@@ -21,7 +21,7 @@ export const CoronaMap = () => {
     // last request was unsuccessful 
     if (!(testStations.status || foodBanks.status) || (testStations.results === 0 && foodBanks.results === 0) ) {
         return (
-            <div className={'text-center block'}>
+            <div className={'custom-ml-5'}>
                 <h3>Nothing found.</h3>
             </div>
         )
@@ -64,7 +64,7 @@ export const CoronaMap = () => {
                 
                 // render the map
                 return (
-                    <div className={'text-center block'}>
+                    <div className={'custom-ml-5'}>
                         <h3>Found { testStations.results } test stations and { foodBanks.results } food banks.</h3>
                         <p>Blue = Test Station, Red = Foodbanks</p><br/>
                         <Map center={center} zoom={10} style={mapStyle}>
@@ -93,7 +93,7 @@ export const CoronaMap = () => {
             }else{
                 // still fetching
                 return(
-                    <div className={'text-center block'}>
+                    <div className={'custom-ml-5'}>
                         <h3 >Loading...</h3>
                     </div>
                 )

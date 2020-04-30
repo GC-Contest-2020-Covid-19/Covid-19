@@ -48,15 +48,15 @@ export const CharityInput = () => {
     }
 
     return (
-        <div>  
-            <h3 className='text-3xl text-center'>Charity</h3>
-            <p className='text-center mb-2'>We currently only support the USA.</p>
-            <form onSubmit={SubmitHandler} className='text-center block mb-8'>
-                <input type="text" id="city" placeholder="City..." value={city} onChange={(e) => setCity(e.target.value)}/>
-                <input type="text" id="amount" placeholder="Amount of Results..." value={amount} onChange={(e) => setAmount(e.target.value)}/>
-                <button type="submit">Search</button>
+        <div className='custom-m-5'>  
+            <h3 className='is-size-3'>Charity</h3>
+            <p className='custom-mb-3'>We currently only support the USA.</p>
+            <form onSubmit={SubmitHandler} className=''>
+                <input className='input is-rounded custom-mb-3' type="text" id="city" placeholder="City..." value={city} onChange={(e) => setCity(e.target.value)}/>
+                <input className='input is-rounded custom-mb-3' type="text" id="amount" placeholder="Amount of Results..." value={amount} onChange={(e) => setAmount(e.target.value)}/>
+                <button type="submit" className='button is-dark'>Search</button>
             </form>
-            {showError && (<p className='text-center'>Please input a valid number as amount.</p>)}
+            {showError && (<p className='is-size-2'>Please input a valid number as amount.</p>)}
         </div>
     )
 }

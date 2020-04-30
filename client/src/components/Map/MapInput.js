@@ -131,9 +131,10 @@ export const MapInput = () => {
         }
         
     return (
-        <div className={'text-center block'}>
-           <button className={'bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full mx-auto block'} onClick={ HandleClick }>Fetch information</button>
-           <h3>We currently only support the USA.</h3>
+        <div className={'custom-m-5'}>
+            <h3 className='is-size-3'>Corona Map</h3>
+            <p className='custom-mb-2'>We currently only support the USA.</p>
+            <button className='button is-dark' onClick={ HandleClick }>Fetch information</button>
         </div>       
     )
 }

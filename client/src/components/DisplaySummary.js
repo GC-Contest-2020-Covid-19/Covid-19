@@ -18,17 +18,17 @@ const DisplaySummary = ({ summary, setSummary }) => {
 		setValue("");
 	};
 	return (
-		<div className=''>
+		<div className='custom-m-5'>
 			<div id='countries'>
-				<h3 className=''>Filter countries by search</h3>
+				<h3 className='is-size-3'>Filter countries by search</h3>
 				<form onSubmit={handleSubmit}>
 					<input
-						className=''
+						className='input is-rounded custom-mb-2'
 						onChange={handleChange}
 						value={value}
 						type='text'
 					/>
-					<input type='submit' value='Search' />
+					<input type='submit' value='Search' className='button is-dark custom-mb-2' />
 				</form>
 
 				{searchTerm
@@ -39,7 +39,7 @@ const DisplaySummary = ({ summary, setSummary }) => {
 					  ))
 					: null}
 			</div>
-			<div className='' id='global'>
+			<div className='is-size-5' id='global'>
 				{summary?.Global ? <SummaryChart place={summary.Global} /> : null}
 			</div>
 		</div>
