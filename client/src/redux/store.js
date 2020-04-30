@@ -5,6 +5,7 @@ import mapReducer from "./reducers/mapReducer";
 import userReducer from "./reducers/userReducer";
 import allCountriesReducer from "./reducers/allCountriesReducer";
 import fromDayOneReducer from "./reducers/fromDayOneReducer";
+import charityReducer from "./reducers/charityReducer";
 
 const reducers = combineReducers({
 	summary: summaryReducer,
@@ -12,6 +13,7 @@ const reducers = combineReducers({
 	user: userReducer,
 	allCountries: allCountriesReducer,
 	fromDayOne: fromDayOneReducer,
+	charity: charityReducer,
 });
 
 const store = createStore(reducers, applyMiddleware(thunk));
