@@ -46,17 +46,19 @@ module.exports = {
 		const page = await browser.newPage();
 		await page.goto(
 			"https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters",
-			{ waitUntil: "networkidle2" }
+			{ waitUntil: "load", timeout: 0 }
 		);
 		const myths = await page.evaluate(() => {
 			return Array.from(
 				document.querySelectorAll(
 					"#PageContent_C003_Col01 div.sf-content-block.content-block div"
 				)
-			).map((div) => ({
-				title: div.querySelector("h2").textContent.trim(),
-				paragraph: div.querySelector("p").textContent.trim(),
-			}));
+			)
+				.map((div) => ({
+					title: div.querySelector("h2").textContent.trim(),
+					paragraph: div.querySelector("p").textContent.trim(),
+				}))
+				.filter((myth) => myth.title && myth.paragraph);
 		});
 
 		browser.close();

@@ -1,5 +1,6 @@
 import axios from "axios";
 const BASEURL = "https://api.covid19api.com";
+const ownServerUrl = "http://localhost:5000";
 
 const fetchSummary = async () => {
 	const { data } = await axios.get(`${BASEURL}/summary`);
@@ -17,4 +18,14 @@ const fetchAllCountries = async () => {
 	return data;
 };
 
-export default { fetchSummary, fetchDayoneByCountry, fetchAllCountries };
+const fetchMyths = async () => {
+	const { data } = await axios.get(`${ownServerUrl}/api/myths`);
+	return data;
+};
+
+export default {
+	fetchSummary,
+	fetchDayoneByCountry,
+	fetchAllCountries,
+	fetchMyths,
+};

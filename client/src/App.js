@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
+import InfoDisplay from "./components/Info/InfoDisplay";
+import Myths from "./components/Info/Myths";
 import "./assets/styles/App.scss";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -23,29 +25,34 @@ import { CharityList } from "./components/Charity/CharityList";
 function App() {
 	return (
 		<Router>
-			<Navbar />
+			{/* just so the text grows on bigger screens */}
+			<div className='is-size-4-desktop is-size-5-tablet'>
+				<Navbar />
 
-			<Route exact path='/' component={Homepage} />
+				<Route exact path='/' component={Homepage} />
 
-			<Route exact path='/summary' component={DisplaySummary} />
+				<Route exact path='/summary' component={DisplaySummary} />
 
-			<Route exact path='/progression'>
-				<ProgressionByCountrySelect />
-				<ProgressionByCountry />
-			</Route>
+				<Route exact path='/progression'>
+					<ProgressionByCountrySelect />
+					<ProgressionByCountry />
+				</Route>
 
-			{/* display useful information on a map*/}
-			<Route path='/map'>
-				<MapInput />
-				<CoronaMap />
-			</Route>
+				{/* display useful information on a map*/}
+				<Route path='/map'>
+					<MapInput />
+					<CoronaMap />
+				</Route>
 
-			{/* diplay charities */}
-			<Route path='/help'>
-				<CharityInput />
-				<CharityList />
-			</Route>
-			<Route path='/info' />
+				{/* diplay charities */}
+				<Route path='/charities'>
+					<CharityInput />
+					<CharityList />
+				</Route>
+				<Route exact path='/info' component={InfoDisplay} />
+
+				<Route exact path='/info/myths' component={Myths} />
+			</div>
 		</Router>
 	);
 }

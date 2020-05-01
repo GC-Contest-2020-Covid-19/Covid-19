@@ -31,7 +31,7 @@ const Footer = () => {
 									</ul>
 								</div>
 								<div className='column has-text-centered'>
-									<h3 className='subtitle has-text-light'>Company</h3>
+									<h3 className='subtitle has-text-light'>Team</h3>
 									<ul>
 										<li>
 											<Link

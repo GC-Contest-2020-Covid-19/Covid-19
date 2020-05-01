@@ -5,11 +5,14 @@ const Navbar = () => {
 	const [active, setActive] = useState(false);
 	const isActive = () => (active ? "is-active" : "");
 	return (
-		<nav className='navbar' role='navigation' aria-label='main navigation'>
+		<nav
+			className='navbar is-light'
+			role='navigation'
+			aria-label='main navigation'>
 			<div className='container'>
 				<div className='navbar-brand'>
 					<Link className='navbar-item' to='/'>
-						SVG logo
+						Covid-19
 					</Link>
 
 					<a
@@ -27,25 +30,51 @@ const Navbar = () => {
 
 				<div id='navbarTarget' className={`navbar-menu ${isActive()}`}>
 					<ul className='navbar-end'>
-						<li className='navbar-item'>
-							<Link className='navbar-link is-arrowless' to='/summary'>
-								Summary
-							</Link>
+						<li className='navbar-item has-dropdown is-hoverable'>
+							<span className='navbar-link'>Statistics</span>
+							<ul className='navbar-dropdown is-boxed'>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/summary'>
+										Summary
+									</Link>
+								</li>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/progression'>
+										Progression
+									</Link>
+								</li>
+							</ul>
 						</li>
-						<li className='navbar-item'>
-							<Link className='navbar-link is-arrowless' to='/progression'>
-								Progression
-							</Link>
+
+						<li className='navbar-item has-dropdown is-hoverable'>
+							<span className='navbar-link'>Information</span>
+							<ul className='navbar-dropdown is-boxed'>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/info'>
+										Disease
+									</Link>
+								</li>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/info/myths'>
+										Myths
+									</Link>
+								</li>
+							</ul>
 						</li>
-						<li className='navbar-item'>
-							<Link className='navbar-link is-arrowless' to='/map'>
-								Map
-							</Link>
-						</li>
-						<li className='navbar-item'>
-							<Link className='navbar-link is-arrowless' to='/help'>
-								Help
-							</Link>
+						<li className='navbar-item has-dropdown is-hoverable'>
+							<span className='navbar-link'>Help</span>
+							<ul className='navbar-dropdown is-boxed'>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/map'>
+										Interactive map
+									</Link>
+								</li>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/charities'>
+										Charities
+									</Link>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</div>
