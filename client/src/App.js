@@ -22,6 +22,10 @@ import { CoronaMap } from "./components/Map/Map";
 import { CharityInput } from "./components/Charity/CharityInput";
 import { CharityList } from "./components/Charity/CharityList";
 
+// prediction model
+import { ModelingInput } from './components/Modeling/ModelingInput'
+import { Model } from './components/Modeling/Model'
+
 function App() {
 	return (
 		<Router>
@@ -49,6 +53,13 @@ function App() {
 					<CharityInput />
 					<CharityList />
 				</Route>
+
+				{/* display predicition model */}
+				<Route path='/model'>
+					<ModelingInput />
+					<Model />
+				</Route>
+
 				<Route exact path='/info' component={InfoDisplay} />
 
 				<Route exact path='/info/myths' component={Myths} />

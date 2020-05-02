@@ -56,7 +56,7 @@ export const CharityInput = () => {
                 <input className='input is-rounded custom-mb-3' type="text" id="amount" placeholder="Amount of Results..." value={amount} onChange={(e) => setAmount(e.target.value)}/>
                 <button type="submit" className='button is-dark'>Search</button>
             </form>
-            {showError && (<p className='is-size-2'>Please input a valid number as amount.</p>)}
+            {showError && (<p className='is-size-4'>Please input a valid number as amount.</p>)}
         </div>
     )
 }
