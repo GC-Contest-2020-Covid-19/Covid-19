@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Homepage from "./components/Homepage";
+import Navbar from "./components/Homepage/Navbar";
+import Homepage from "./components/Homepage/Homepage";
 import InfoDisplay from "./components/Info/InfoDisplay";
 import Myths from "./components/Info/Myths";
 import "./assets/styles/App.scss";

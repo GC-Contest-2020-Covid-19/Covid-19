@@ -43,6 +43,11 @@ const Navbar = () => {
 										Progression
 									</Link>
 								</li>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/model'>
+										Model
+									</Link>
+								</li>
 							</ul>
 						</li>
 
