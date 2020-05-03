@@ -107,7 +107,7 @@ export const MapInput = () => {
                             // set amount of results
                             dispatch(changeFoodResults(json.names.length))
                             
-                            // add foodBanks to context
+                            // add foodBanks to store
                             for(let i = 0; i < json.names.length; i++){
                                 createFoodBank(json, i)
                                     .then(newFoodBank => {

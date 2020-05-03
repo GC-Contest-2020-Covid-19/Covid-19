@@ -64,8 +64,57 @@ module.exports = {
 		browser.close();
 		return myths;
 	},
+	scrapeCoursera: async function (query){
+		const browser = await puppeteer.launch()
+
+		const page = await browser.newPage()
+		await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
+
+		await page.goto(`https://www.coursera.org/search?query=${query}`)
+		
+		// get data
+		const partnerRaw = await page.evaluate(() => {
+			const listItems = Array.from(document.querySelectorAll('.partner-name'));
+			return listItems.map((li) => li.innerHTML);
+		});
+		
+		const title = await page.evaluate(() => {
+			const listItems = Array.from(document.querySelectorAll('.card-title'));
+			return listItems.map((li) => li.innerHTML);
+		});
+		
+		const rating = await page.evaluate(() => {
+			const listItems = Array.from(document.querySelectorAll('.ratings-text'));
+			return listItems.map((li) => li.innerHTML);
+		});
+		
+		const enrollement = await page.evaluate(() => {
+			const listItems = Array.from(document.querySelectorAll('.enrollment-number'));
+			return listItems.map((li) => li.innerHTML);
+		});
+		
+		const difficulty = await page.evaluate(() => {
+			const listItems = Array.from(document.querySelectorAll('.difficulty'));
+			return listItems.map((li) => li.innerHTML);
+		});	
+
+		// filter partner
+		const partner = filterCoursera(partnerRaw)
+
+		return [partner, title, rating, enrollement, difficulty]
+	}
 };
 
 function extractContent(s) {
 	return s.replace(/<[^>]+>/g, "");
+}
+
+function filterCoursera(array){
+	let rv = []
+	for (let i = 0; i < array.length; i++){
+		if (array[i][0] !== '<'){
+			rv.push(array[i])
+		}
+	}
+	return rv
 }

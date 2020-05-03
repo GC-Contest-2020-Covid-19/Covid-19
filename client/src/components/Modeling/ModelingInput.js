@@ -7,21 +7,23 @@ import { clearModeling, changeModelingParams } from '../../redux/actions/modelin
 export const ModelingInput = () => {
     const dispatch = useDispatch()
 
+    const [showError, setError] = useState(false)
+
     const [s, setS] = useState(0)
     const [a, setA] = useState(0)
     const [b, setB] = useState(0)
     const [testing, setTesting] = useState(0)
     const [lag, setLag] = useState(0)
     const [time, setTime] = useState('')
-    const [showError, setError] = useState(false)
-    
+    const [population, setPopulation] = useState('')
+
     const SubmitHandler = (e) => {
         e.preventDefault()
         clearModeling()
 
-        if (validNumbers([s, a, b, time, testing, lag])){
+        if (validNumbers([s, a, b, time, testing, population])){
             const data = [(parseFloat(s) / 100), (1 - (parseFloat(s) / 100)), parseFloat(a), parseFloat(b), 
-                          (parseFloat(testing) / 100), Number(time), Number(lag)]
+                          (parseFloat(testing) / 100), Number(time), Number(lag), Number(population)]
             dispatch(changeModelingParams(data))
             setError(false)
         }else{
@@ -29,14 +31,18 @@ export const ModelingInput = () => {
         }
 
     }
-
     return (
 
         <div className='custom-m-5'>
             <h3 className='is-size-3'>Model</h3>
             <form onSubmit={SubmitHandler} className='field '>
                 
-                <p className='label'>Healthy Population ({s ? s+'%' : 'select a value'})</p>
+            
+                <div className="control">
+                    <input className='input is-rounded custom-mb-3' type="text" id="time" placeholder="Total Population" value={population} onChange={(e) => setPopulation(e.target.value)}/>
+                </div>
+                
+                <p className='label'>Healthy Population ({(s && population) ? s+'% - '+(population*(s/100)).toLocaleString()+' People' : 'select a value'})</p>
                 <div className="control">
                     <input className='slider is-circle' type="range" min='0' max='100' step='0.01' value={s} onChange={(e) => setS(e.target.value)}/>
                 </div>

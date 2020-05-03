@@ -79,6 +79,11 @@ const Navbar = () => {
 										Charities
 									</Link>
 								</li>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/courses'>
+										Courses
+									</Link>
+								</li>
 							</ul>
 						</li>
 					</ul>

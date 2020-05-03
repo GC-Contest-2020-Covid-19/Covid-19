@@ -21,7 +21,12 @@ export const Model = () => {
         let S = [model.S]
         let I = [model.I]
         let R = [0]
-        let C = [model.I * model.testing]
+        let C
+        if (model.lag == 0){
+            C = [model.I * model.testing]
+        }else{
+            C = [0]
+        }
 
         for (let i = 0; i < model.time; i++){
             S.push((-model.a * S[i] * I[i]) + S[i])
@@ -33,7 +38,14 @@ export const Model = () => {
                 C.push(0)
             }
         }
-        
+
+        for (let i = 0; i < model.time; i++){
+            S[i] = (S[i] * model.population)
+            I[i] = (I[i] * model.population)
+            R[i] = (R[i] * model.population)
+            C[i] = (C[i] * model.population)
+        }
+  
         const data = {
             labels: [...Array(model.time).keys()],
             datasets: [

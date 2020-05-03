@@ -26,6 +26,10 @@ import { CharityList } from "./components/Charity/CharityList";
 import { ModelingInput } from './components/Modeling/ModelingInput'
 import { Model } from './components/Modeling/Model'
 
+// courses
+import { CoursesInput } from './components/Courses/CoursesInput'
+import { CoursesList } from './components/Courses/CoursesList'
+
 function App() {
 	return (
 		<Router>
@@ -58,6 +62,11 @@ function App() {
 				<Route path='/model'>
 					<ModelingInput />
 					<Model />
+				</Route>
+
+				<Route path='/courses'>
+					<CoursesInput />
+					<CoursesList />
 				</Route>
 
 				<Route exact path='/info' component={InfoDisplay} />
