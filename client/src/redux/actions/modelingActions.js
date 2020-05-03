@@ -4,37 +4,9 @@ export const clearModeling = () => {
     }
 }
 
-export const changeModelingS = (S) => {
+export const changeModelingParams = (params) => {
     return {
-        type: 'CHANGE_MODELING_S',
-        payload: S
-    }
-}
-
-export const changeModelingI = (I) => {
-    return {
-        type: 'CHANGE_MODELING_I',
-        payload: I
-    }
-}
-
-export const changeModelingA = (a) => {
-    return {
-        type: 'CHANGE_MODELING_A',
-        payload: a
-    }
-}
-
-export const changeModelingB = (b) => {
-    return {
-        type: 'CHANGE_MODELING_B',
-        payload: b
-    }
-}
-
-export const changeModelingTime = (time) => {
-    return {
-        type: 'CHANGE_MODELING_TIME',
-        payload: time
+        type: 'CHANGE_MODELING_PARAMS',
+        payload: params
     }
 }
