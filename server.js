@@ -132,7 +132,8 @@ app.get(
 				titles: data[1],
 				ratings: data[2],
 				enrollement: data[3],
-				difficulties: data[4]
+				difficulties: data[4],
+				links: data[5]
 			});
 		} else {
 			res.json({ success: false });

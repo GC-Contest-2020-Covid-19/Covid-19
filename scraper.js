@@ -73,35 +73,22 @@ module.exports = {
 		await page.goto(`https://www.coursera.org/search?query=${query}`)
 		
 		// get data
-		const partnerRaw = await page.evaluate(() => {
-			const listItems = Array.from(document.querySelectorAll('.partner-name'));
-			return listItems.map((li) => li.innerHTML);
-		});
+		const selector = ['.partner-name', '.card-title', '.ratings-text', '.enrollment-number', '.difficulty']
+		let data = []
+		for (let i = 0; i < selector.length; i++){
+			data.push(await page.evaluate(function(selector, i){
+				const listItems = Array.from(document.querySelectorAll(selector[i]));
+				return listItems.map((li) => li.innerHTML);
+			}, selector, i))
+		}
+		data.push(await page.evaluate(function(){
+			const listItems = Array.from(document.querySelectorAll('.rc-MobileSearchCard'));
+			return listItems.map((li) => li.getAttribute('href'))}))
 		
-		const title = await page.evaluate(() => {
-			const listItems = Array.from(document.querySelectorAll('.card-title'));
-			return listItems.map((li) => li.innerHTML);
-		});
-		
-		const rating = await page.evaluate(() => {
-			const listItems = Array.from(document.querySelectorAll('.ratings-text'));
-			return listItems.map((li) => li.innerHTML);
-		});
-		
-		const enrollement = await page.evaluate(() => {
-			const listItems = Array.from(document.querySelectorAll('.enrollment-number'));
-			return listItems.map((li) => li.innerHTML);
-		});
-		
-		const difficulty = await page.evaluate(() => {
-			const listItems = Array.from(document.querySelectorAll('.difficulty'));
-			return listItems.map((li) => li.innerHTML);
-		});	
-
 		// filter partner
-		const partner = filterCoursera(partnerRaw)
+		data[0] = filterCoursera(data[0])
 
-		return [partner, title, rating, enrollement, difficulty]
+		return data
 	}
 };
 
@@ -118,3 +105,5 @@ function filterCoursera(array){
 	}
 	return rv
 }
+
+

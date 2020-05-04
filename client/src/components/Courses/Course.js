@@ -9,7 +9,7 @@ export const Course = ({ course }) => {
         return (
             <div className={'card custom-mb-2'}>
                 <div className="card-content">
-                    <p className='title is-4'>{ course.title }</p>
+                    <a className='title is-4' href={ course.link }>{ course.title }</a>
                     <div className='content'>
                         <p>Offered by: { course.university }</p>
                         <p>{ course.rating } / 5</p>
@@ -24,7 +24,7 @@ export const Course = ({ course }) => {
         return (
             <div className={'card custom-mb-2'}>
                 <div className="card-content">
-                    <p className='title is-4'>{ course.title }</p>
+                    <a className='title is-4' href={ course.link }>{ course.title }</a>
                     <p className='title is-6'>Offered by: { course.university }</p>
                     <button onClick={onClick} className='button is-dark'>Show More</button> 
                 </div>

@@ -16,6 +16,10 @@ export const CoursesList = () => {
                     <div>{courses.courses.map((c) => (<Course key={c.id} course={c} />))}</div>
                 </div>
            )
+        }else{
+            return (
+                <h3 className='custom-m-5'>Please try again</h3>
+            )
         }
     }else{
         // loading

@@ -23,6 +23,7 @@ export const CoursesInput = () => {
             .then(json => {
                 
                 if (json === false || json.success === false){
+                    dispatch(addCourse('error'))
                     dispatch(changeCourseStatus(false))
                     return false
                 }
@@ -34,7 +35,8 @@ export const CoursesInput = () => {
                         title: json.titles[i],
                         rating: json.ratings[i],
                         enrollement: json.enrollement[i],
-                        difficulty: json.difficulties[i]
+                        difficulty: json.difficulties[i],
+                        link: `https://www.coursera.org${json.links[i]}`
                     }))
                 }
             })
