@@ -122,9 +122,9 @@ app.get(
 
 // Coursera
 app.get(
-	'/api/coursera/:query',
+	"/api/coursera/:query",
 	asyncMiddleware(async (req, res) => {
-		const data = await scraper.scrapeCoursera(req.params.query)
+		const data = await scraper.scrapeCoursera(req.params.query);
 		if (data[0].length > 0) {
 			res.json({
 				success: "true",
@@ -133,14 +133,13 @@ app.get(
 				ratings: data[2],
 				enrollement: data[3],
 				difficulties: data[4],
-				links: data[5]
+				links: data[5],
 			});
 		} else {
 			res.json({ success: false });
 		}
 	})
-)
-
+);
 
 // start server
 const PORT = process.env.PORT || 5000;
