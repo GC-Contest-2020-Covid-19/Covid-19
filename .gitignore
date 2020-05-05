@@ -23,9 +23,7 @@ client/yarn-error.log*
 
 
 # credentials
-client/src/credentials.js
-credentials.js
-
+.env
 
 # Server
 node_modules
