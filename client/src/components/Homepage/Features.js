@@ -1,5 +1,5 @@
 import React from "react";
-import SVG from "../components/SVGs/SVG";
+import SVG from "../SVGs/SVG";
 
 const Features = () => {
 	return (

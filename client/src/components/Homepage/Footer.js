@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SVG from "./SVGs/SVG";
+import SVG from "../SVGs/SVG";
 
 const Footer = () => {
 	return (

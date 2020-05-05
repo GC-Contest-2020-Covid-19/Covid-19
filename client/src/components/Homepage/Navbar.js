@@ -43,6 +43,11 @@ const Navbar = () => {
 										Progression
 									</Link>
 								</li>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/model'>
+										Model
+									</Link>
+								</li>
 							</ul>
 						</li>
 
@@ -72,6 +77,11 @@ const Navbar = () => {
 								<li className='navbar-item'>
 									<Link className='navbar-link is-arrowless' to='/charities'>
 										Charities
+									</Link>
+								</li>
+								<li className='navbar-item'>
+									<Link className='navbar-link is-arrowless' to='/courses'>
+										Courses
 									</Link>
 								</li>
 							</ul>

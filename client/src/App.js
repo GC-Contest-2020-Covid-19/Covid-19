@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Homepage from "./components/Homepage";
+import Navbar from "./components/Homepage/Navbar";
+import Homepage from "./components/Homepage/Homepage";
 import InfoDisplay from "./components/Info/InfoDisplay";
 import Myths from "./components/Info/Myths";
 import "./assets/styles/App.scss";
@@ -21,6 +21,14 @@ import { CoronaMap } from "./components/Map/Map";
 // charities
 import { CharityInput } from "./components/Charity/CharityInput";
 import { CharityList } from "./components/Charity/CharityList";
+
+// prediction model
+import { ModelingInput } from './components/Modeling/ModelingInput'
+import { Model } from './components/Modeling/Model'
+
+// courses
+import { CoursesInput } from './components/Courses/CoursesInput'
+import { CoursesList } from './components/Courses/CoursesList'
 
 function App() {
 	return (
@@ -49,6 +57,18 @@ function App() {
 					<CharityInput />
 					<CharityList />
 				</Route>
+
+				{/* display predicition model */}
+				<Route path='/model'>
+					<ModelingInput />
+					<Model />
+				</Route>
+
+				<Route path='/courses'>
+					<CoursesInput />
+					<CoursesList />
+				</Route>
+
 				<Route exact path='/info' component={InfoDisplay} />
 
 				<Route exact path='/info/myths' component={Myths} />
