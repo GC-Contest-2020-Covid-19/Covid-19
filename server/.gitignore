@@ -1,0 +1,9 @@
+# credentials
+.env
+
+# Server
+node_modules
+
+# vscode
+.vscode/
+.vscode/launch.json
