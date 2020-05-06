@@ -15,7 +15,7 @@ export const Model = () => {
             S'(S, I, a) = -a * S * I
             I'(S, I, a, b) = a * S * I - b * I
             R'(I, b) = b * I 
-            C' = I' * testing
+            C' = (a * S * I)' * testing
         */
 
         let S = [model.S]
