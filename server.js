@@ -2,6 +2,7 @@ const express = require("express");
 const scraper = require("./scraper.js");
 const Geocoder = require("node-geocoder");
 const fetch = require("node-fetch");
+require('dotenv').config()
 
 const app = express();
 

@@ -33,7 +33,7 @@ export const Model = () => {
             I.push(((model.a * S[i] * I[i]) - (model.b * I[i])) + I[i])
             R.push((model.b * I[i]) + R[i])
             if (typeof I[i - model.lag] !== 'undefined'){
-                C.push((I[i - model.lag] * model.testing) + C[i])
+                C.push(((model.a * S[i-model.lag] * I[i-model.lag]) ) + C[i])
             }else{
                 C.push(0)
             }
