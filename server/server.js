@@ -20,11 +20,9 @@ app.use(function (req, res, next) {
 	next();
 });
 
-/* Routes */
+app.use(express.static("build"));
 
-app.get("/", (req, res) => {
-	res.send("working");
-});
+/* Routes */
 
 // foodBanks
 app.get(
