@@ -14,7 +14,7 @@ export const Course = ({ course }) => {
                         <p>Offered by: { course.university }</p>
                         <p>{ course.rating } / 5</p>
                         <p>{ course.enrollement } students are enrolled.</p>
-                        <p>Difficulty: { course.difficulty }</p>
+                        <p>Difficulty: { course.difficulty }</p> 
                         <button onClick={onClick} className='button is-dark'>Show Less</button> 
                     </div>
                 </div>
@@ -26,7 +26,7 @@ export const Course = ({ course }) => {
                 <div className="card-content">
                     <a className='title is-4' href={ course.link }>{ course.title }</a>
                     <p className='title is-6'>Offered by: { course.university }</p>
-                    <button onClick={onClick} className='button is-dark'>Show More</button> 
+                    {course.rating ? <button onClick={onClick} className='button is-dark'>Show More</button> : null}
                 </div>
             </div>
         )

@@ -21,10 +21,8 @@ export const CoursesInput = () => {
 		dispatch(clearCourses());
 		dispatch(changeCourseStatus(true));
 
-		getCoursera(query).then((json) => {
+		const c_r = getCoursera(query).then((json) => {
 			if (json === false || json.success === false) {
-				dispatch(addCourse("error"));
-				dispatch(changeCourseStatus(false));
 				return false;
 			}
 
@@ -42,6 +40,25 @@ export const CoursesInput = () => {
 				);
 			}
 		});
+		const c_e = getEDX(query).then((json) => {
+			if (json === false || json.success === false) {
+				return false;
+			}
+			for (let i = 0; i < json.titles.length; i++) {
+				dispatch(
+					addCourse({
+						id: uuidv4(),
+						university: json.universities[i],
+						title: json.titles[i],
+						link: `https://www.coursera.org${json.links[i]}`,
+					})
+				);
+			}
+		})
+		if (!c_r && !c_e){
+			dispatch(changeCourseStatus(false));
+		}
+
 	};
 
 	return (
@@ -69,6 +86,23 @@ export const CoursesInput = () => {
 
 function getCoursera(query) {
 	return fetch(encodeURI(SERVER_PATH + `api/coursera/${query}`), {
+		mode: "cors",
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error("Network response was not ok");
+			}
+			return response;
+		})
+		.then((response) => response.json())
+		.catch((error) => {
+			console.log(error);
+			return false;
+		});
+}
+
+function getEDX(query) {
+	return fetch(encodeURI(SERVER_PATH + `api/edx/${query}`), {
 		mode: "cors",
 	})
 		.then((response) => {

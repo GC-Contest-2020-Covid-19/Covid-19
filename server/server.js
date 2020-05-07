@@ -123,7 +123,7 @@ app.get(
 	})
 );
 
-// Coursera
+// Courses
 app.get(
 	"/api/coursera/:query",
 	asyncMiddleware(async (req, res) => {
@@ -143,6 +143,25 @@ app.get(
 		}
 	})
 );
+
+app.get(
+	"/api/edx/:query",
+	asyncMiddleware(async (req, res) => {
+		const data = await scraper.scrapeEDX(req.params.query);
+		if (data[0].length > 0) {
+			res.json({
+				success: "true",
+				universities: data[0],
+				titles: data[1],
+				links: data[2]
+			});
+		} else {
+			res.json({ success: false });
+		}
+	})
+);
+
+
 
 // start server
 const PORT = process.env.PORT || 5000;

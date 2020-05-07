@@ -34,11 +34,11 @@ const Footer = () => {
 									<h3 className='subtitle has-text-light'>Team</h3>
 									<ul>
 										<li>
-											<Link
-												to='https://github.com/orgs/GC-Contest-2020-Covid-19/people'
+											<a
+												href='https://github.com/orgs/GC-Contest-2020-Covid-19/people'
 												className='has-text-light'>
 												Developers
-											</Link>
+											</a>
 										</li>
 										<li>
 											<Link to='/about' className='has-text-light'>

@@ -120,18 +120,84 @@ module.exports = {
 
 		return data;
 	},
+	scrapeEDX: async function(query) {
+		const browser = await puppeteer.launch({
+			args: ["--no-sandbox"],
+		});
+
+		const page = await browser.newPage();
+		await page.setUserAgent(
+			"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
+		);
+		//setting timeout to 0 ensures that there is no network timeout in case of slow network connections
+		await page.goto(`https://www.edx.org/course?search_query=${query}`, {
+			waitUntil: "load",
+			timeout: 0,
+		});
+
+		// get data
+		const selector = [
+			".label",
+			".title-heading"
+			
+		];
+		let data = [];
+		for (let i = 0; i < selector.length; i++) {
+			data.push(extractContent(
+				await page.evaluate(
+					function (selector, i) {
+						const listItems = Array.from(
+							document.querySelectorAll(selector[i])
+						);
+						return listItems.map((li) => (li.innerText));
+					},
+					selector,
+					i
+				))
+			);
+		}
+		data.push(
+			await page.evaluate(function () {
+				const listItems = Array.from(
+					document.querySelectorAll(".course-link")
+				);
+				return listItems.map((li) => li.getAttribute("href"));
+			})
+		);
+		
+		data[0] = filterEdx(data[0])
+
+		return data;
+	},
 };
 
 function extractContent(s) {
-	return s.replace(/<[^>]+>/g, "");
+	if (Array.isArray(s)){
+		let rv = []
+		for (let i = 0; i <s.length; i++){
+			rv.push(s[i].replace(/<[^>]+>/g, ""))
+		}
+		return rv
+	}else{
+		console.log(s)
+		return s.replace(/<[^>]+>/g, "")
+	}
 }
 
 function filterCoursera(array) {
 	let rv = [];
 	for (let i = 0; i < array.length; i++) {
 		if (array[i][0] !== "<") {
-			rv.push(array[i]);
+			rv.push(array[i])
 		}
 	}
 	return rv;
+}
+
+function filterEdx(array){
+	let rv = []
+	for (let i = 0; i < array.length; i++) {
+		rv.push(array[i].replace('Schools and Partners:\n', ''))
+	}
+	return rv
 }
