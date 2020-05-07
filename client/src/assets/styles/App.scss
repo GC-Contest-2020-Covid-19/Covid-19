@@ -1,0 +1,332 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina+2&display=swap");
+
+// font-family: 'Baloo Bhaina 2', cursive;
+
+// Set your brand colors
+// $purple: #8a4d76;
+// $pink: #fa7c91;
+// $brown: #757763;
+// $beige-light: #d0d1cd;
+// $beige-lighter: #eff0eb;
+
+// Update Bulma's global variables
+$family-sans-serif: "Baloo Bhaina 2", cursive;
+// $grey-dark: $brown;
+// $grey-light: $beige-light;
+// $primary: $purple;
+// $link: $pink;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+//custom spacing values
+$spacer: 1em;
+$one: 0.25;
+$two: 0.5;
+$four: 1.5;
+$five: 3;
+
+/*               PADDINGS               */
+//padding all-round
+.custom-p-1 {
+	padding: $spacer * $one;
+}
+.custom-p-2 {
+	padding: $spacer * $two;
+}
+.custom-p-3 {
+	padding: $spacer;
+}
+.custom-p-4 {
+	padding: $spacer * $four;
+}
+.custom-p-5 {
+	padding: $spacer * $five;
+}
+
+//padding left
+.custom-pl-1 {
+	padding-left: $spacer * $one;
+}
+.custom-pl-2 {
+	padding-left: $spacer * $two;
+}
+.custom-pl-3 {
+	padding-left: $spacer;
+}
+.custom-pl-4 {
+	padding-left: $spacer * $four;
+}
+.custom-pl-5 {
+	padding-left: $spacer * $five;
+}
+
+//padding top
+.custom-pt-1 {
+	padding-top: $spacer * $one;
+}
+.custom-pt-2 {
+	padding-top: $spacer * $two;
+}
+.custom-pt-3 {
+	padding-top: $spacer;
+}
+.custom-pt-4 {
+	padding-top: $spacer * $four;
+}
+.custom-pt-5 {
+	padding-top: $spacer * $five;
+}
+
+//padding right
+.custom-pr-1 {
+	padding-right: $spacer * $one;
+}
+.custom-pr-2 {
+	padding-right: $spacer * $two;
+}
+.custom-pr-3 {
+	padding-right: $spacer;
+}
+.custom-pr-4 {
+	padding-right: $spacer * $four;
+}
+.custom-pr-5 {
+	padding-right: $spacer * $five;
+}
+
+//padding bottom
+.custom-pb-1 {
+	padding-bottom: $spacer * $one;
+}
+.custom-pb-2 {
+	padding-bottom: $spacer * $two;
+}
+.custom-pb-3 {
+	padding-bottom: $spacer;
+}
+.custom-pb-4 {
+	padding-bottom: $spacer * $four;
+}
+.custom-pb-5 {
+	padding-bottom: $spacer * $five;
+}
+
+//padding top and bottom
+.custom-py-1 {
+	padding-top: $spacer * $one;
+	padding-bottom: $spacer * $one;
+}
+.custom-py-2 {
+	padding-top: $spacer * $two;
+	padding-bottom: $spacer * $two;
+}
+.custom-py-3 {
+	padding-top: $spacer;
+	padding-bottom: $spacer;
+}
+.custom-py-4 {
+	padding-top: $spacer * $four;
+	padding-bottom: $spacer * $four;
+}
+.custom-py-5 {
+	padding-top: $spacer * $five;
+	padding-bottom: $spacer * $five;
+}
+
+//padding left and right
+.custom-px-1 {
+	padding-left: $spacer * $one;
+	padding-right: $spacer * $one;
+}
+.custom-px-2 {
+	padding-left: $spacer * $two;
+	padding-right: $spacer * $two;
+}
+.custom-px-3 {
+	padding-left: $spacer;
+	padding-right: $spacer;
+}
+.custom-px-4 {
+	padding-left: $spacer * $four;
+	padding-right: $spacer * $four;
+}
+.custom-px-5 {
+	padding-left: $spacer * $five;
+	padding-right: $spacer * $five;
+}
+
+/*               MARGINS               */
+//margin all-round
+.custom-m-1 {
+	margin: $spacer * $one;
+}
+.custom-m-2 {
+	padding: $spacer * $two;
+}
+.custom-m-3 {
+	padding: $spacer;
+}
+.custom-m-4 {
+	padding: $spacer * $four;
+}
+.custom-m-5 {
+	padding: $spacer * $five;
+}
+
+//margin left
+.custom-ml-1 {
+	margin-left: $spacer * $one;
+}
+.custom-ml-2 {
+	margin-left: $spacer * $two;
+}
+.custom-ml-3 {
+	margin-left: $spacer;
+}
+.custom-ml-4 {
+	margin-left: $spacer * $four;
+}
+.custom-ml-5 {
+	margin-left: $spacer * $five;
+}
+
+//margin top
+.custom-mt-1 {
+	margin-top: $spacer * $one;
+}
+.custom-mt-2 {
+	margin-top: $spacer * $two;
+}
+.custom-mt-3 {
+	margin-top: $spacer;
+}
+.custom-mt-4 {
+	margin-top: $spacer * $four;
+}
+.custom-mt-5 {
+	margin-top: $spacer * $five;
+}
+
+//margin right
+.custom-mr-1 {
+	margin-right: $spacer * $one;
+}
+.custom-mr-2 {
+	margin-right: $spacer * $two;
+}
+.custom-mr-3 {
+	margin-right: $spacer;
+}
+.custom-mr-4 {
+	margin-right: $spacer * $four;
+}
+.custom-mr-5 {
+	margin-right: $spacer * $five;
+}
+
+//margin bottom
+.custom-mb-1 {
+	margin-bottom: $spacer * $one;
+}
+.custom-mb-2 {
+	margin-bottom: $spacer * $two;
+}
+.custom-mb-3 {
+	margin-bottom: $spacer;
+}
+.custom-mb-4 {
+	margin-bottom: $spacer * $four;
+}
+.custom-mb-5 {
+	margin-bottom: $spacer * $five;
+}
+
+//margin top and bottom
+.custom-my-1 {
+	margin-top: $spacer * $one;
+	margin-bottom: $spacer * $one;
+}
+.custom-my-2 {
+	margin-top: $spacer * $two;
+	margin-bottom: $spacer * $two;
+}
+.custom-my-3 {
+	margin-top: $spacer;
+	margin-bottom: $spacer;
+}
+.custom-my-4 {
+	margin-top: $spacer * $four;
+	margin-bottom: $spacer * $four;
+}
+.custom-my-5 {
+	margin-top: $spacer * $five;
+	margin-bottom: $spacer * $five;
+}
+
+//margin left and right
+.custom-mx-1 {
+	margin-left: $spacer * $one;
+	margin-right: $spacer * $one;
+}
+.custom-mx-2 {
+	margin-left: $spacer * $two;
+	margin-right: $spacer * $two;
+}
+.custom-mx-3 {
+	margin-left: $spacer;
+	margin-right: $spacer;
+}
+.custom-mx-4 {
+	margin-left: $spacer * $four;
+	margin-right: $spacer * $four;
+}
+.custom-mx-5 {
+	margin-left: $spacer * $five;
+	margin-right: $spacer * $five;
+}
+
+//custom feature icon
+.feature-image {
+	position: absolute;
+	top: -35px;
+	left: 50%;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	transform: translateX(-50%);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+//intro hero w/ image
+#intro-hero {
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.7),
+			rgba(255, 255, 255, 0.7)
+		),
+		url("../images/undraw_social_distancing_2g0u.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 75%;
+}
+
+// Update some of Bulma's component variables
+// $body-background-color: $beige-lighter;
+// $control-border-width: 2px;
+// $input-border-color: transparent;
+// $input-shadow: none;
+
+// Import only what you need from Bulma
+@import "../../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../../node_modules/bulma/sass/base/_all.sass";
+@import "../../../node_modules/bulma/sass/components/_all.sass";
+@import "../../../node_modules/bulma/sass/elements/_all.sass";
+@import "../../../node_modules/bulma/sass/form/_all.sass";
+@import "../../../node_modules/bulma/sass/grid/_all.sass";
+@import "../../../node_modules/bulma/sass/layout/_all.sass";
+@import "~bulma-slider"
