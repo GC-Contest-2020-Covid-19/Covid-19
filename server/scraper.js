@@ -3,7 +3,9 @@ const puppeteer = require("puppeteer");
 module.exports = {
 	scrapeFoodBanks: async function scrapeFoodBanks(city) {
 		// launch browser
-		const browser = await puppeteer.launch();
+		const browser = await puppeteer.launch({
+			args: ["--no-sandbox"],
+		});
 
 		// open website
 		const page = await browser.newPage();
@@ -41,7 +43,9 @@ module.exports = {
 		return [names, adresses, phones];
 	},
 	scrapeMyths: async function () {
-		const browser = await puppeteer.launch();
+		const browser = await puppeteer.launch({
+			args: ["--no-sandbox"],
+		});
 
 		const page = await browser.newPage();
 		await page.goto(
@@ -65,7 +69,9 @@ module.exports = {
 		return myths;
 	},
 	scrapeCoursera: async function (query) {
-		const browser = await puppeteer.launch();
+		const browser = await puppeteer.launch({
+			args: ["--no-sandbox"],
+		});
 
 		const page = await browser.newPage();
 		await page.setUserAgent(

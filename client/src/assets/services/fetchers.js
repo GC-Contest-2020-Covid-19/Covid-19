@@ -1,6 +1,6 @@
 import axios from "axios";
 const BASEURL = "https://api.covid19api.com";
-const ownServerUrl = "http://localhost:5000";
+const ownServerUrl = "https://covid19-gc.herokuapp.com";
 
 const fetchSummary = async () => {
 	const { data } = await axios.get(`${BASEURL}/summary`);

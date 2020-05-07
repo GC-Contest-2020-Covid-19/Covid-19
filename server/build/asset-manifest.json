@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dc565a2e.chunk.css",
+    "main.js": "/static/js/main.bbf1adcf.chunk.js",
+    "main.js.map": "/static/js/main.bbf1adcf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6b30d221.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6b30d221.js.map",
+    "static/css/2.6f3a26c5.chunk.css": "/static/css/2.6f3a26c5.chunk.css",
+    "static/js/2.653f2f40.chunk.js": "/static/js/2.653f2f40.chunk.js",
+    "static/js/2.653f2f40.chunk.js.map": "/static/js/2.653f2f40.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.8893ffaf469ae7a5f5bd849b1933a424.js": "/precache-manifest.8893ffaf469ae7a5f5bd849b1933a424.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.6f3a26c5.chunk.css.map": "/static/css/2.6f3a26c5.chunk.css.map",
+    "static/css/main.dc565a2e.chunk.css.map": "/static/css/main.dc565a2e.chunk.css.map",
+    "static/js/2.653f2f40.chunk.js.LICENSE.txt": "/static/js/2.653f2f40.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/static/media/undraw_social_distancing_2g0u.567b3b9b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6b30d221.js",
+    "static/css/2.6f3a26c5.chunk.css",
+    "static/js/2.653f2f40.chunk.js",
+    "static/css/main.dc565a2e.chunk.css",
+    "static/js/main.bbf1adcf.chunk.js"
+  ]
+}

@@ -2,7 +2,7 @@ const express = require("express");
 const scraper = require("./scraper.js");
 const Geocoder = require("node-geocoder");
 const fetch = require("node-fetch");
-require('dotenv').config()
+require("dotenv").config();
 
 const app = express();
 
@@ -19,6 +19,8 @@ app.use(function (req, res, next) {
 	);
 	next();
 });
+
+app.use(express.static("build"));
 
 /* Routes */
 
