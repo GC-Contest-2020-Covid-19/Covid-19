@@ -5,9 +5,9 @@ import { setupMyths } from "../../redux/reducers/mythsReducer";
 const Myths = ({ setupMyths, myths }) => {
 	const dispatch = useDispatch();
 	useEffect(() => {
-		const inStorage = window.localStorage.getItem("myths");
+		const inStorage = JSON.parse(window.localStorage.getItem("myths"));
 		if (inStorage && inStorage.length > 0) {
-			dispatch({ type: "SETUP_MYTHS", payload: JSON.parse(inStorage) });
+			dispatch({ type: "SETUP_MYTHS", payload: inStorage });
 		} else {
 			setupMyths();
 		}

@@ -30,6 +30,9 @@ import { Model } from './components/Modeling/Model'
 import { CoursesInput } from './components/Courses/CoursesInput'
 import { CoursesList } from './components/Courses/CoursesList'
 
+// about
+import { About } from './components/About'
+
 function App() {
 	return (
 		<Router>
@@ -72,6 +75,8 @@ function App() {
 				<Route exact path='/info' component={InfoDisplay} />
 
 				<Route exact path='/info/myths' component={Myths} />
+
+				<Route exact path='/about' component={About} />
 			</div>
 		</Router>
 	);

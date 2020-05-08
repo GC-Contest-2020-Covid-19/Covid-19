@@ -109,7 +109,7 @@ app.get(
 	})
 );
 
-//myths
+// myths
 app.get(
 	"/api/myths",
 	asyncMiddleware(async (req, res, next) => {

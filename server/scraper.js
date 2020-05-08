@@ -64,7 +64,6 @@ module.exports = {
 				}))
 				.filter((myth) => myth.title && myth.paragraph);
 		});
-
 		browser.close();
 		return myths;
 	},

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SVG from "../SVGs/SVG";
 
 const Features = () => {
@@ -9,15 +10,12 @@ const Features = () => {
 					<div className='custom-mb-5 has-text-centered'>
 						<h2 className='title has-text-link'>Keep yourself informed</h2>
 						<p className='subtitle'>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum iste
-							illo, fuga sit iusto aliquam cupiditate recusandae earum quo
-							doloremque minus? Similique nemo, cumque dolores fugit inventore
-							perferendis suscipit illum!
+							We provide several services which help you to stay on top of the current situation! 
 						</p>
 					</div>
 
 					<div className='columns'>
-						<div className='column is-relative custom-mt-5 has-text-centered'>
+						<Link to='/summary' className='column is-relative custom-mt-5 has-text-centered'>
 							<div className='box'>
 								<h3 className='custom-mt-5 title'>Summary</h3>
 								<p className='subtitle'>
@@ -28,8 +26,8 @@ const Features = () => {
 									<SVG type='pieChart' width='80' />
 								</div>
 							</div>
-						</div>
-						<div className='column is-relative custom-mt-5 has-text-centered'>
+						</Link>
+						<Link to='/progression' className='column is-relative custom-mt-5 has-text-centered'>
 							<div className='box'>
 								<h3 className='custom-mt-5 title'>Progression</h3>
 								<p className='subtitle'>
@@ -40,8 +38,8 @@ const Features = () => {
 									<SVG type='lineChart' width='80' />
 								</div>
 							</div>
-						</div>
-						<div className='column is-relative custom-mt-5 has-text-centered'>
+						</Link>
+						<Link to='/info/myths' className='column is-relative custom-mt-5 has-text-centered'>
 							<div className='box'>
 								<h3 className='custom-mt-5 title'>Facts &amp; Myths</h3>
 								<p className='subtitle'>
@@ -52,7 +50,7 @@ const Features = () => {
 									<SVG type='medical' width='80' />
 								</div>
 							</div>
-						</div>
+						</Link>
 					</div>
 				</div>
 			</div>
