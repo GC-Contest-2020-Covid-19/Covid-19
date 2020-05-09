@@ -39,57 +39,57 @@ const Navbar = () => {
 
 				<div id='navbarTarget' className={`navbar-menu ${isActive()}`}>
 					<ul className='navbar-end'>
-						<li className='navbar-item has-dropdown is-hoverable'>
-							<span className='navbar-link'>Statistics</span>
+						<li className='navbar-item is-hoverable'>
+							<p className='custom-nav-link custom-p-1'>Statistics</p>
 							<ul className='navbar-dropdown is-boxed'>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/summary'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/summary'>
 										Summary
 									</Link>
 								</li>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/progression'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/progression'>
 										Progression
 									</Link>
 								</li>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/model'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/model'>
 										Model
 									</Link>
 								</li>
 							</ul>
 						</li>
 
-						<li className='navbar-item has-dropdown is-hoverable'>
-							<span className='navbar-link'>Information</span>
+						<li className='navbar-item is-hoverable'>
+							<p className='custom-nav-link custom-p-1'>Information</p>
 							<ul className='navbar-dropdown is-boxed'>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/info'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/info'>
 										Disease
 									</Link>
 								</li>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/info/myths'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/info/myths'>
 										Myths
 									</Link>
 								</li>
 							</ul>
 						</li>
-						<li className='navbar-item has-dropdown is-hoverable'>
-							<span className='navbar-link'>Help</span>
+						<li className='navbar-item is-hoverable'>
+							<p className='custom-nav-link custom-p-1'>Help</p>
 							<ul className='navbar-dropdown is-boxed'>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/map'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/map'>
 										Interactive map
 									</Link>
 								</li>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/charities'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/charities'>
 										Charities
 									</Link>
 								</li>
 								<li className='navbar-item'>
-									<Link className='navbar-link is-arrowless' to='/courses'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/courses'>
 										Courses
 									</Link>
 								</li>
