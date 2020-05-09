@@ -5,11 +5,13 @@ import moment from "moment";
 
 const ProgressionByCountry = ({ fromDayOne }) => {
 	const data = {
-		labels: fromDayOne?.map((country) => moment(country.Date).format("MMM Do")),
+		labels: fromDayOne?.dates?.map((singleDay) =>
+			moment(new Date(singleDay).toISOString()).format("MMM Do")
+		),
 		datasets: [
 			{
 				label: "Confirmed Cases",
-				data: fromDayOne?.map((country) => country.Confirmed),
+				data: fromDayOne?.cases?.map((c) => c),
 				backgroundColor: [
 					"rgba(54, 162, 235, 0.2)",
 					"rgba(255, 206, 86, 0.2)",
@@ -29,7 +31,7 @@ const ProgressionByCountry = ({ fromDayOne }) => {
 			},
 			{
 				label: "Deaths",
-				data: fromDayOne?.map((country) => country.Deaths),
+				data: fromDayOne?.deaths?.map((death) => death),
 				backgroundColor: [
 					"rgba(255, 206, 86, 0.2)",
 					"rgba(75, 192, 192, 0.2)",
@@ -48,7 +50,7 @@ const ProgressionByCountry = ({ fromDayOne }) => {
 			},
 			{
 				label: "Recovered",
-				data: fromDayOne?.map((country) => country.Recovered),
+				data: fromDayOne?.recovereds?.map((recovered) => recovered),
 				backgroundColor: [
 					"rgba(75, 192, 192, 0.2)",
 					"rgba(153, 102, 255, 0.2)",

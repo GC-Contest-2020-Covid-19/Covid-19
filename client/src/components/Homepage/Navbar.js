@@ -1,29 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { changeTheme } from '../../redux/actions/userActions'
+import { changeTheme } from "../../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 
 const Navbar = () => {
 	const [active, setActive] = useState(false);
 	const isActive = () => (active ? "is-active" : "");
-	
-	const dispatch = useDispatch()
+
+	const dispatch = useDispatch();
 	const ToggleTheme = () => {
-		dispatch(changeTheme())
-	}
-	
+		dispatch(changeTheme());
+	};
+
 	return (
-		<nav
-			className='navbar'
-			role='navigation'
-			aria-label='main navigation'>
+		<nav className='navbar' role='navigation' aria-label='main navigation'>
 			<div className='container'>
 				<div className='navbar-brand'>
 					<Link className='navbar-item' to='/'>
 						Covid-19
 					</Link>
 
-					<a className='navbar-item' onClick={ToggleTheme}>Toggle Darkmode</a>
+					<a className='navbar-item' onClick={ToggleTheme}>
+						Toggle Darkmode
+					</a>
 
 					<a
 						role='button'

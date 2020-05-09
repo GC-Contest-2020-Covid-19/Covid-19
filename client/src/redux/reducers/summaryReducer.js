@@ -7,14 +7,20 @@ export const setSummary = () => {
 	};
 };
 
-const summaryReducer = (state = {}, action) => {
+const summaryReducer = (state = [], action) => {
 	switch (action.type) {
 		case "SET_UP":
 			return action.payload;
+			// eslint-disable-next-line
+			break;
 		case "TAKE_DOWN":
-			return {};
+			return [];
+			// eslint-disable-next-line
+			break;
 		default:
 			return state;
+			// eslint-disable-next-line
+			break;
 	}
 };
 

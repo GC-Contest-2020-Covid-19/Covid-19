@@ -130,13 +130,15 @@ const Info = () => {
 					as{" "}
 					<a
 						href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019'
-						target='_blank'>
+						target='_blank'
+						rel='noopener noreferrer'>
 						WHO
 					</a>
 					,{" "}
 					<a
 						href='https://www.cdc.gov/coronavirus/2019-ncov/index.html'
-						target='_blank'>
+						target='_blank'
+						rel='noopener noreferrer'>
 						CDC
 					</a>
 					, or your local and national health authorities.
@@ -167,7 +169,8 @@ const Info = () => {
 				<a
 					className='has-text-white'
 					href='https://www.who.int/news-room/q-a-detail/q-a-coronaviruses'
-					target='_blank'>
+					target='_blank'
+					rel='noopener noreferrer'>
 					Find out more
 				</a>
 			</section>

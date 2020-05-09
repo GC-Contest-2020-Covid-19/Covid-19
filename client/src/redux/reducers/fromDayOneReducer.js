@@ -1,8 +1,29 @@
 import fetchers from "../../assets/services/fetchers";
 
-export const setUpFromDayOne = (country) => {
+export const setUpFromDayOne = (countryISO, timeline) => {
 	return async (dispatch) => {
-		const payload = await fetchers.fetchDayoneByCountry(country);
+		const data = await fetchers.fetchDayoneByCountry(countryISO, timeline);
+		if (!data) {
+			dispatch({
+				type: "SET_NOTIFICATION",
+				text: "No data was found for this country. Please try another",
+			});
+			return setTimeout(() => {
+				dispatch({
+					type: "RESET_NOTIFICATION",
+				});
+			}, 3000);
+		}
+		const dates = Object.keys(data.timeline.cases);
+		const cases = Object.values(data.timeline.cases);
+		const deaths = Object.values(data.timeline.deaths);
+		const recovereds = Object.values(data.timeline.recovered);
+		const payload = {
+			dates,
+			cases,
+			deaths,
+			recovereds,
+		};
 		dispatch({ type: "RESET_FROMDAYONE" });
 		dispatch({ type: "SET_UP_FROMDAYONE", payload });
 	};
@@ -12,12 +33,15 @@ const fromDayOneReducer = (state = [], action) => {
 	switch (action.type) {
 		case "SET_UP_FROMDAYONE":
 			return action.payload;
+			// eslint-disable-next-line
 			break;
 		case "RESET_FROMDAYONE":
 			return [];
+			// eslint-disable-next-line
 			break;
 		default:
 			return state;
+			// eslint-disable-next-line
 			break;
 	}
 };

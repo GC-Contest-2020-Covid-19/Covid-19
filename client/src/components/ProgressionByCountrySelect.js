@@ -8,23 +8,29 @@ const ProgressionByCountrySelect = ({
 	setUpFromDayOne,
 	setUpallCountries,
 }) => {
-	const [value, setValue] = useState("");
+	const [value, setValue] = useState({ countries: "", timeline: "" });
 	useEffect(() => {
 		setUpallCountries();
 	}, []);
+	useEffect(() => {
+		if (value.countries !== "" && value.timeline !== "") {
+			setUpFromDayOne(value.countries, value.timeline);
+		}
+	}, [value]);
+
 	const handleChange = (evt) => {
-		setValue(evt.target.value);
-		setUpFromDayOne(evt.target.value);
+		setValue({ ...value, [evt.target.name]: evt.target.value });
 	};
 	return (
 		<div className='custom-m-3'>
 			<h2 className='is-size-2'>Select a country to show progression</h2>
 			<div className='select'>
 				<select
-					value={value}
+					value={value.country}
 					onChange={handleChange}
 					name='countries'
 					id='countries'>
+					<option value=''>Choose a country</option>
 					{allCountries
 						?.sort((a, b) => {
 							if (a.Country < b.Country) {
@@ -36,10 +42,24 @@ const ProgressionByCountrySelect = ({
 							return 0;
 						})
 						.map((country) => (
-							<option key={country.ISO2} value={country.Slug}>
+							<option key={country.ISO2} value={country.ISO2}>
 								{country.Country}
 							</option>
 						))}
+				</select>
+			</div>
+			<h2 className='is-size-2'>Select a timeline</h2>
+			<div className='select'>
+				<select
+					value={value.timeline}
+					onChange={handleChange}
+					name='timeline'
+					id='countries'>
+					<option value=''>Choose a timeline</option>
+					<option value='all'>From the beginning</option>
+					<option value='30'>Past 30 days</option>
+					<option value='15'>Past 15 days</option>
+					<option value='24'>Past 24 days</option>
 				</select>
 			</div>
 		</div>

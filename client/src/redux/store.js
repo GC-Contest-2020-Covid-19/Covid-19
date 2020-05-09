@@ -8,7 +8,8 @@ import fromDayOneReducer from "./reducers/fromDayOneReducer";
 import charityReducer from "./reducers/charityReducer";
 import mythsReducer from "./reducers/mythsReducer";
 import modelingReducer from "./reducers/modelingReducer";
-import courseReducer from "./reducers/courseReducer"
+import courseReducer from "./reducers/courseReducer";
+import notificationReducer from "./reducers/notificationReducer";
 
 const reducers = combineReducers({
 	summary: summaryReducer,
@@ -20,6 +21,7 @@ const reducers = combineReducers({
 	myths: mythsReducer,
 	modeling: modelingReducer,
 	courses: courseReducer,
+	notification: notificationReducer,
 });
 
 const store = createStore(reducers, applyMiddleware(thunk));

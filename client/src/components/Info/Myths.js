@@ -15,7 +15,8 @@ const Myths = ({ setupMyths, myths }) => {
 	useEffect(() => {
 		window.localStorage.setItem("myths", JSON.stringify(myths));
 	}, [myths]);
-	return myths ? (
+
+	return myths.length > 0 ? (
 		<section id='myths' className='custom-px-3'>
 			<h2 className='has-text-centered is-size-2'>
 				Common myths about the virus and disease
@@ -39,7 +40,8 @@ const Myths = ({ setupMyths, myths }) => {
 				<a
 					className='has-text-white'
 					href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters'
-					target='_blank'>
+					target='_blank'
+					rel='noopener noreferrer'>
 					Find out more
 				</a>
 			</section>

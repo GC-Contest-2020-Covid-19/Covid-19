@@ -16,13 +16,13 @@ const CTA = () => {
 							{isClicked ? (
 								<>
 									<div className='custom-mb-3'>
-										<Link className='button is-link custom-mr-1' to='/help/get'>
-											Get Help
+										<Link className='button is-link custom-mr-1' to='/map'>
+											Food drives
 										</Link>
 										<Link
 											className='button is-link custom-ml-1'
-											to='/help/give'>
-											Lend Help
+											to='/charities'>
+											Charities
 										</Link>
 									</div>
 									<button onClick={handleClick} className='button is-primary'>
