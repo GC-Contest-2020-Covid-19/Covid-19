@@ -1,6 +1,6 @@
 import React from "react";
-import CTA from "./CTA";
 import Intro from "./Intro";
+import ThingsToDo from "./ThingsToDo";
 import Features from "./Features";
 import Footer from "./Footer";
 
@@ -9,7 +9,7 @@ const Homepage = () => {
 		<>
 			<Intro />
 			<Features />
-			<CTA />
+			<ThingsToDo />
 			<Footer />
 		</>
 	);

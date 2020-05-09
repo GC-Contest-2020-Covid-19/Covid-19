@@ -1,12 +1,12 @@
 import React from "react";
 
 // redux
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
 // homepage
 import Navbar from "./components/Homepage/Navbar";
 import Homepage from "./components/Homepage/Homepage";
-import { About } from './components/About'
+import { About } from "./components/About";
 
 // information
 import InfoDisplay from "./components/Info/InfoDisplay";
@@ -14,8 +14,8 @@ import Myths from "./components/Info/Myths";
 
 // styling
 import "./assets/styles/App.scss";
-import { Container } from './assets/styles/Themes'
-import { ThemeProvider } from 'styled-components'
+import { Container } from "./assets/styles/Themes";
+import { ThemeProvider } from "styled-components";
 
 // routing
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -36,22 +36,23 @@ import { CharityInput } from "./components/Charity/CharityInput";
 import { CharityList } from "./components/Charity/CharityList";
 
 // prediction model
-import { ModelingInput } from './components/Modeling/ModelingInput'
-import { Model } from './components/Modeling/Model'
+import { ModelingInput } from "./components/Modeling/ModelingInput";
+import { Model } from "./components/Modeling/Model";
 
 // courses
-import { CoursesInput } from './components/Courses/CoursesInput'
-import { CoursesList } from './components/Courses/CoursesList'
-
+import { CoursesInput } from "./components/Courses/CoursesInput";
+import { CoursesList } from "./components/Courses/CoursesList";
 
 function App() {
-	const theme = useSelector(state => state.user.theme)
+	const theme = useSelector((state) => state.user.theme);
 	return (
 		<Router>
 			<ThemeProvider theme={{ theme: theme }}>
 				<Container>
 					{/* just so the text grows on bigger screens */}
-					<div className='is-size-4-desktop is-size-5-tablet' style={{'minWidth': '100vw', 'minHeight': '100vh'}}>
+					<div
+						className='is-size-4-desktop is-size-5-tablet'
+						style={{ minWidth: "100vw", minHeight: "100vh" }}>
 						<Navbar />
 
 						<Route exact path='/' component={Homepage} />
@@ -91,7 +92,6 @@ function App() {
 						<Route exact path='/info/myths' component={Myths} />
 
 						<Route exact path='/about' component={About} />
-
 					</div>
 				</Container>
 			</ThemeProvider>

@@ -58,8 +58,8 @@ const ProgressionByCountrySelect = ({
 					<option value=''>Choose a timeline</option>
 					<option value='all'>From the beginning</option>
 					<option value='30'>Past 30 days</option>
-					<option value='15'>Past 15 days</option>
 					<option value='24'>Past 24 days</option>
+					<option value='15'>Past 15 days</option>
 				</select>
 			</div>
 		</div>

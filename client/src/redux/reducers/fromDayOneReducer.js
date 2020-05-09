@@ -3,17 +3,7 @@ import fetchers from "../../assets/services/fetchers";
 export const setUpFromDayOne = (countryISO, timeline) => {
 	return async (dispatch) => {
 		const data = await fetchers.fetchDayoneByCountry(countryISO, timeline);
-		if (!data) {
-			dispatch({
-				type: "SET_NOTIFICATION",
-				text: "No data was found for this country. Please try another",
-			});
-			return setTimeout(() => {
-				dispatch({
-					type: "RESET_NOTIFICATION",
-				});
-			}, 3000);
-		}
+
 		const dates = Object.keys(data.timeline.cases);
 		const cases = Object.values(data.timeline.cases);
 		const deaths = Object.values(data.timeline.deaths);
