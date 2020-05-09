@@ -45,7 +45,7 @@ export const CoursesInput = () => {
 				);
 			}
 		});
-		const c_e = getEDX(query).then((json) => {
+		getEDX(query).then((json) => {
 			if (json === false || json.success === false) {
 				dispatch(changeCourseEdxStatus(false))
 				return false;

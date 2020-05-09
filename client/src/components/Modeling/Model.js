@@ -8,7 +8,7 @@ export const Model = () => {
     
     const model = useSelector(state => state.modeling)
     
-    if (model.S != 0){
+    if (model.S !== 0){
         
         /* 
             calculate data
@@ -22,7 +22,7 @@ export const Model = () => {
         let I = [model.I]
         let R = [0]
         let C
-        if (model.lag == 0){
+        if (model.lag === 0){
             C = [model.I * model.testing]
         }else{
             C = [0]

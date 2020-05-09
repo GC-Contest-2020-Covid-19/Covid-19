@@ -51,7 +51,7 @@ function App() {
 			<ThemeProvider theme={{ theme: theme }}>
 				<Container>
 					{/* just so the text grows on bigger screens */}
-					<div className='is-size-4-desktop is-size-5-tablet' style={{'min-width': '100vw', 'min-height': '100vh'}}>
+					<div className='is-size-4-desktop is-size-5-tablet' style={{'minWidth': '100vw', 'minHeight': '100vh'}}>
 						<Navbar />
 
 						<Route exact path='/' component={Homepage} />

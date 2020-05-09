@@ -36,7 +36,7 @@ const DisplaySummary = ({ summary, setSummary }) => {
 				<div className='has-text-centered'>
 					{searchTerm
 						? summary?.Countries?.filter((country) =>
-								country.Country.toLowerCase().includes(searchTerm)
+								country.Country.toLowerCase().includes(searchTerm.toLowerCase())
 						  ).map((country) => (
 								<SummaryChart key={country.CountryCode} place={country} />
 						  ))
