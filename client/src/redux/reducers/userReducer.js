@@ -1,9 +1,8 @@
 const initState = {
-    // Position of the user ( coordinates )
     coordinates: 'NOT SET',
-    // state and city
     us_state: 'NOT SET',
-    city: 'NOT SET'
+    city: 'NOT SET',
+    theme: JSON.parse(localStorage.getItem('theme')) || 'light'
 }
 
 const userReducer = (state = initState, action) => {
@@ -22,6 +21,14 @@ const userReducer = (state = initState, action) => {
             return{
                 ...state,
                 city: action.payload
+            }
+        case 'CHANGE_THEME':
+            let theme 
+            state.theme === 'light' ? theme = 'dark' : theme = 'light'
+            localStorage.setItem('theme', JSON.stringify(theme))  
+            return {
+                ...state,
+                theme: theme
             }
         default:
             return state

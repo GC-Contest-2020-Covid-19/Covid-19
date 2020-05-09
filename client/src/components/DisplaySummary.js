@@ -31,7 +31,7 @@ const DisplaySummary = ({ summary, setSummary }) => {
 							type='text'
 						/>
 					</p>
-					<input type='submit' value='Search' className='button is-dark' />
+					<button type='submit' className='button is-rounded'>Search</button>
 				</form>
 				<div className='has-text-centered'>
 					{searchTerm

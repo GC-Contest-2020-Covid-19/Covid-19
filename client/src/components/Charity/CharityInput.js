@@ -70,7 +70,7 @@ export const CharityInput = () => {
 					value={amount}
 					onChange={(e) => setAmount(e.target.value)}
 				/>
-				<button type='submit' className='button is-dark'>
+				<button type='submit' className='button is-rounded'>
 					Search
 				</button>
 			</form>

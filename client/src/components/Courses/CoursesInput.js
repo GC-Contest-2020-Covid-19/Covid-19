@@ -6,7 +6,9 @@ import { useDispatch } from "react-redux";
 import {
 	clearCourses,
 	addCourse,
-	changeCourseStatus,
+	changeCourseCouseraStatus,
+	changeCourseEdxStatus,
+	changeCourseRequested
 } from "../../redux/actions/courseActions";
 
 const SERVER_PATH = "https://covid19-gc.herokuapp.com/";
@@ -19,10 +21,13 @@ export const CoursesInput = () => {
 	const SubmitHandler = (e) => {
 		e.preventDefault();
 		dispatch(clearCourses());
-		dispatch(changeCourseStatus(true));
+		dispatch(changeCourseCouseraStatus(true));
+		dispatch(changeCourseEdxStatus(true));
+		dispatch(changeCourseRequested(true));
 
-		const c_r = getCoursera(query).then((json) => {
+		getCoursera(query).then((json) => {
 			if (json === false || json.success === false) {
+				dispatch(changeCourseCouseraStatus(false))
 				return false;
 			}
 
@@ -42,6 +47,7 @@ export const CoursesInput = () => {
 		});
 		const c_e = getEDX(query).then((json) => {
 			if (json === false || json.success === false) {
+				dispatch(changeCourseEdxStatus(false))
 				return false;
 			}
 			for (let i = 0; i < json.titles.length; i++) {
@@ -50,15 +56,11 @@ export const CoursesInput = () => {
 						id: uuidv4(),
 						university: json.universities[i],
 						title: json.titles[i],
-						link: `https://www.coursera.org${json.links[i]}`,
+						link: json.links[i],
 					})
 				);
 			}
 		})
-		if (!c_r && !c_e){
-			dispatch(changeCourseStatus(false));
-		}
-
 	};
 
 	return (
@@ -76,7 +78,7 @@ export const CoursesInput = () => {
 						onChange={(e) => setQuery(e.target.value)}
 					/>
 				</div>
-				<button type='submit' className='button is-dark'>
+				<button type='submit' className='button is-rounded'>
 					Search!
 				</button>
 			</form>

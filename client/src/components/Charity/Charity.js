@@ -6,7 +6,6 @@ export const Charity = ({ charity }) => {
     const [showMore, setShowMore] = useState(false)
     const onClick = () => setShowMore(!showMore)
 
-
     if (showMore){
         return (
             <div className={'card custom-mb-2'}>
@@ -16,7 +15,7 @@ export const Charity = ({ charity }) => {
                         <p>{ charity.mission }</p>
                         <p className=''>{ charity.affiliation }</p>
                         <p className=''>{ charity.subsection }</p>
-                        <button onClick={onClick} className='button is-dark'>Show Less</button> 
+                        <button onClick={onClick} className='button is-rounded'>Show Less</button> 
                     </div>
                 </div>
             </div>
@@ -27,7 +26,7 @@ export const Charity = ({ charity }) => {
                 <div className="card-content">
                     <a className='title is-4' href={ charity.url }>{ charity.name }</a>
                     <p className='title is-6'>{ charity.tagLine }</p>
-                    <button onClick={onClick} className='button is-dark'>Show More</button> 
+                    <button onClick={onClick} className='button is-rounded'>Show More</button> 
                 </div>
             </div>
         )

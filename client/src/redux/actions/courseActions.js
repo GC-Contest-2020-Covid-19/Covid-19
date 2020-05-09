@@ -11,9 +11,23 @@ export const addCourse = (course) => {
     }
 }
 
-export const changeCourseStatus = (status) => {
+export const changeCourseCouseraStatus = (status) => {
     return {
-        type: 'CHANGE_COURSE_STATUS',
+        type: 'CHANGE_COURSE_C_STATUS',
         payload: status
+    }
+}
+
+export const changeCourseEdxStatus = (status) => {
+    return {
+        type: 'CHANGE_COURSE_E_STATUS',
+        payload: status
+    }
+}
+
+export const changeCourseRequested = (bool) => {
+    return {
+        type: 'CHANGE_COURSE_REQUESTED',
+        payload: bool
     }
 }

@@ -133,7 +133,7 @@ export const MapInput = () => {
 		<div className={"custom-m-5"}>
 			<h3 className='is-size-3'>Corona Map</h3>
 			<p className='custom-mb-2'>We currently only support the USA.</p>
-			<button className='button is-dark' onClick={HandleClick}>
+			<button className='button is-rounded' onClick={HandleClick}>
 				Fetch information
 			</button>
 		</div>

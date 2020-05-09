@@ -29,8 +29,8 @@ export const ModelingInput = () => {
         }else{
             setError(true)
         }
-
     }
+
     return (
 
         <div className='custom-m-5'>
@@ -46,7 +46,7 @@ export const ModelingInput = () => {
                 <div className="control">
                     <input className='slider is-circle' type="range" min='0' max='100' step='0.01' value={s} onChange={(e) => setS(e.target.value)}/>
                 </div>
-                
+
                 <p className='label'>Infection Rate ({a ? a : 'select a value'})</p>
                 <div className="control">
                     <input type="range" className='slider is-circle' min='0' max='2' step='0.01' value={a} onChange={(e) => setA(e.target.value)}/>
@@ -71,7 +71,7 @@ export const ModelingInput = () => {
                     <input className='input is-rounded custom-mb-3' type="text" id="time" placeholder="Days to simulate" value={time} onChange={(e) => setTime(e.target.value)}/>
                 </div>
 
-                <button type="submit" className='button is-dark'>Calculate!</button>
+                <button type="submit" className='button is-rounded'>Calculate!</button>
 
             </form>
             {(a && b) ? (<p><a href="https://en.wikipedia.org/wiki/Basic_reproduction_number">basic reproduction number:</a> {(a / b).toFixed(3)}</p>) : null}
