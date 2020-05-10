@@ -21,10 +21,10 @@ const SummaryChart = ({ place }) => {
 		<div className='box custom-mb-5'>
 			{place.country && (
 				<div className='columns is-vcentered'>
-					<div className='column is-half has-text-right'>
+					<div className='column is-half has-text-right-tablet'>
 						<h3 className='is-size-2'>{place.country}</h3>
 					</div>
-					<div className='column is-half has-text-left'>
+					<div className='column is-hidden-mobile is-half has-text-left'>
 						<img
 							className='is-block'
 							width='120px'

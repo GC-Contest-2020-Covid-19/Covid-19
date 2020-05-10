@@ -106,7 +106,7 @@ const ThingsToDo = () => {
 							It's not the end of the world........
 							<span className='has-text-danger is-size-3'>YET</span>
 						</p>
-						<SVG type='washHands' width='500' />
+						<SVG type='washHands' width='100%' />
 					</div>
 				</div>
 			</div>
