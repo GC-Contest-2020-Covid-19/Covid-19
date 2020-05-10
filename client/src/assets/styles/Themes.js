@@ -27,7 +27,15 @@ const boxColor = theme('theme', {
     dark: "#242128",
 })
 
+const hoverColor = theme('theme', {
+    light: '#8bc6e6',
+    dark: '#104040'
+})
 
+const hoverBgColor = theme('theme', {
+    light: '#104040',
+    dark: '#8bc6e6'
+})
 
 export const Container = styled.div`
     
@@ -51,9 +59,9 @@ export const Container = styled.div`
         color: #000;
     }
     
-    .navbarTarget {
-        background-color: ${backgroundColor};
-        color: ${textColor};
+    .custom-nav-link:hover {
+        background-color: ${hoverBgColor};
+        color: ${hoverColor};
     }
     
 `
