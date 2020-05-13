@@ -48,18 +48,9 @@ const Footer = () => {
 									</ul>
 								</div>
 								<div className='column has-text-centered '>
-									<span className='custom-mx-3'>
-										<SVG type='socials' socialType='facebook' />
-									</span>
-									<span className='custom-mx-3'>
-										<SVG type='socials' socialType='twitter' />
-									</span>
-									<span className='custom-mx-3'>
-										<SVG type='socials' socialType='pinterest' />
-									</span>
-									<span className='custom-mx-3'>
-										<SVG type='socials' socialType='instagram' />
-									</span>
+									<a href='https://github.com/GC-Contest-2020-Covid-19/Covid-19' className='custom-mx-3 custom-white'>
+										<SVG type='socials' socialType='github'/> Github
+									</a>
 								</div>
 							</div>
 						</div>

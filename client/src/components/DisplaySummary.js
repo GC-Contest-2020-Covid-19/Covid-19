@@ -26,7 +26,7 @@ const DisplaySummary = ({ summary, setSummary }) => {
 		setFilter("");
 	};
 	return (
-		<div className='custom-m-5'>
+		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
 			<div className='custom-mb-5' id='countries'>
 				<h3 className='is-size-3'>Find one or multiple countries</h3>
 

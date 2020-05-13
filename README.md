@@ -2,7 +2,8 @@
 
 ## Getting Started
 
-- install all packages via ```npm install``` and ```npm run client-install```
+- install all packages via ```npm install``` and ```cd server && npm run client-install```
+
 - set the following enviromental variables:  
     - 'OPENCAGE_KEY': api key from [opencage](https://opencagedata.com/).
     - 'CHARITY_ID': application id from [charityapi](https://charity.3scale.net/).

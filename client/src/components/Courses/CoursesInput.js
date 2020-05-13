@@ -64,10 +64,12 @@ export const CoursesInput = () => {
 	};
 
 	return (
-		<div>
+		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
+			<h3 className='is-size-3'>University Courses</h3>
+			<p className='is-size-5'>Expand your knowledge with a university course!</p>
 			<form
 				onSubmit={SubmitHandler}
-				className='field custom-ml-5 custom-mr-5 custom-mt-3'>
+				className='field'>
 				<div className='control'>
 					<input
 						className='input is-rounded custom-mb-3'

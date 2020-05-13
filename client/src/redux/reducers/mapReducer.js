@@ -15,6 +15,7 @@ const initState = {
 		// amount of results
 		results: -1,
 	},
+	requested: false
 };
 
 const mapReducer = (state = initState, action) => {
@@ -123,6 +124,12 @@ const mapReducer = (state = initState, action) => {
 			};
 			// eslint-disable-next-line
 			break;
+		case "CHANGE_MAP_REQUESTED":
+			return {
+				...state,
+				requested: action.payload,
+			};
+			// eslint-disable-next-line
 		default:
 			return state;
 			// eslint-disable-next-line

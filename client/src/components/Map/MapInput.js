@@ -14,6 +14,7 @@ import {
 	changeFoodResults,
 	addFoodResult,
 	clearFoodBanks,
+	changeMapRequested
 } from "../../redux/actions/mapActions";
 import {
 	changeCoordinates,
@@ -27,6 +28,7 @@ export const MapInput = () => {
 	const dispatch = useDispatch();
 
 	const HandleClick = () => {
+		dispatch(changeMapRequested(true))
 		navigator.geolocation.getCurrentPosition(function (loc) {
 			// set the user's position
 			dispatch(changeCoordinates([loc.coords.latitude, loc.coords.longitude]));
@@ -130,9 +132,9 @@ export const MapInput = () => {
 	};
 
 	return (
-		<div className={"custom-m-5"}>
-			<h3 className='is-size-3'>Corona Map</h3>
-			<p className='custom-mb-2'>We currently only support the USA.</p>
+		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
+			<h3 className='is-size-3'>Map</h3>
+			<p className='is-size-5'>Test stations and food banks near you. We currently only support the USA.</p>
 			<button className='button is-rounded' onClick={HandleClick}>
 				Fetch information
 			</button>

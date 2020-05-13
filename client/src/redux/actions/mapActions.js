@@ -67,3 +67,10 @@ export const clearFoodBanks = () => {
         type: 'CLEAR_FOOD_BANKS'
     }
 }
+
+export const changeMapRequested = (bool) => {
+    return {
+        type: 'CHANGE_MAP_REQUESTED',
+        payload: bool
+    }
+}

@@ -9,12 +9,12 @@ export const Course = ({ course }) => {
         return (
             <div className={'card custom-mb-2'}>
                 <div className="card-content">
-                    <a className='title is-4' href={ course.link }>{ course.title }</a>
+                    <a className='title is-size-4' href={ course.link }>{ course.title }</a>
                     <div className='content'>
-                        <p>Offered by: { course.university }</p>
-                        <p>{ course.rating } / 5</p>
-                        <p>{ course.enrollement } students are enrolled.</p>
-                        <p>Difficulty: { course.difficulty }</p> 
+                        <p className='is-size-5'>Offered by: { course.university }</p>
+                        <p className='is-size-5'>Rating: { course.rating } / 5</p>
+                        <p className='is-size-5'>{ course.enrollement } students are enrolled.</p>
+                        <p className='is-size-5'>Difficulty: { course.difficulty }</p> 
                         <button onClick={onClick} className='button is-rounded'>Show Less</button> 
                     </div>
                 </div>
@@ -24,8 +24,8 @@ export const Course = ({ course }) => {
         return (
             <div className={'card custom-mb-2'}>
                 <div className="card-content">
-                    <a className='title is-4' href={ course.link }>{ course.title }</a>
-                    <p className='title is-6'>Offered by: { course.university }</p>
+                    <a className='title is-size-4' href={ course.link }>{ course.title }</a>
+                    <p className='title is-size-5'>Offered by: { course.university }</p>
                     {course.rating ? <button onClick={onClick} className='button is-rounded'>Show More</button> : null}
                 </div>
             </div>

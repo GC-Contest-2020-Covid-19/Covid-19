@@ -50,9 +50,9 @@ export const CharityInput = () => {
 	};
 
 	return (
-		<div className='custom-m-5'>
+		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
 			<h3 className='is-size-3'>Charity</h3>
-			<p className='custom-mb-3'>We currently only support the USA.</p>
+			<p className='is-size-5'>You need help or want to donate? Find charities near you! We currently only support the USA.</p>
 			<form onSubmit={SubmitHandler} className=''>
 				<input
 					className='input is-rounded custom-mb-3'

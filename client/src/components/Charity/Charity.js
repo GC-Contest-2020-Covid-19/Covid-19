@@ -10,12 +10,12 @@ export const Charity = ({ charity }) => {
         return (
             <div className={'card custom-mb-2'}>
                 <div className="card-content">
-                    <a className='title is-4' href={ charity.url }>{ charity.name }</a>
+                    <a className='title is-size-4' href={ charity.url }>{ charity.name }</a>
                     <div className='content'>
-                        <p>{ charity.mission }</p>
-                        <p className=''>{ charity.affiliation }</p>
-                        <p className=''>{ charity.subsection }</p>
-                        <button onClick={onClick} className='button is-rounded'>Show Less</button> 
+                        <p className='is-size-5'>{ charity.mission }</p>
+                        <p className='is-size-5'>{ charity.affiliation }</p>
+                        <p className='is-size-5'>{ charity.subsection }</p>
+                        <button onClick={onClick} className='button is-rounded is-size-6'>Show Less</button> 
                     </div>
                 </div>
             </div>
@@ -24,8 +24,8 @@ export const Charity = ({ charity }) => {
         return (
             <div className={'card custom-mb-2'}>
                 <div className="card-content">
-                    <a className='title is-4' href={ charity.url }>{ charity.name }</a>
-                    <p className='title is-6'>{ charity.tagLine }</p>
+                    <a className='title is-size-4' href={ charity.url }>{ charity.name }</a>
+                    <p className='title is-size-5'>{ charity.tagLine }</p>
                     <button onClick={onClick} className='button is-rounded'>Show More</button> 
                 </div>
             </div>

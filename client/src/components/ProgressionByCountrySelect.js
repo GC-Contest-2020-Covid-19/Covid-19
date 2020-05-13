@@ -22,7 +22,7 @@ const ProgressionByCountrySelect = ({
 		setValue({ ...value, [evt.target.name]: evt.target.value });
 	};
 	return (
-		<div className='custom-m-3'>
+		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
 			<h2 className='is-size-2'>Select a country to show progression</h2>
 			<div className='select'>
 				<select

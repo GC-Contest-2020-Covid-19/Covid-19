@@ -33,8 +33,9 @@ export const ModelingInput = () => {
 
     return (
 
-        <div className='custom-m-5'>
+        <div className='custom-ml-5 custom-mr-5 custom-mt-3'>
             <h3 className='is-size-3'>Model</h3>
+            <p className='is-size-5'>Model the pandemic using the <a href='https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SIR_model'>SIR model</a></p>
             <form onSubmit={SubmitHandler} className='field '>
                 
             

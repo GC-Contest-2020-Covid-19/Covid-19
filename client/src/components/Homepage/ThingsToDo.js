@@ -17,8 +17,8 @@ const ThingsToDo = () => {
 						</p>
 					</div>
 					<div className='columns'>
-						<Link
-							to='https://www.scribd.com/'
+						<a
+							href='https://www.scribd.com/'
 							className='column custom-mt-3 has-text-centered'>
 							<div className='box'>
 								<h3 className='custom-mt-3 title'>Reading</h3>
@@ -29,9 +29,9 @@ const ThingsToDo = () => {
 								</p>
 								<SVG type='reading' width='300' />
 							</div>
-						</Link>
-						<Link
-							to='https://www.youtube.com/learning'
+						</a>
+						<a
+							href='https://www.youtube.com/learning'
 							className='column custom-mt-3 has-text-centered'>
 							<div className='box'>
 								<h3 className='custom-mt-3 title'>Youtube</h3>
@@ -42,9 +42,9 @@ const ThingsToDo = () => {
 								</p>
 								<SVG type='youtube' width='300' />
 							</div>
-						</Link>
-						<Link
-							to='https://www.verywellfit.com/best-ways-to-exercise-at-home-1231142'
+						</a>
+						<a
+							href='https://www.verywellfit.com/best-ways-to-exercise-at-home-1231142'
 							className='column custom-mt-3 has-text-centered'>
 							<div className='box'>
 								<h3 className='custom-mt-3 title'>Excercise</h3>
@@ -54,7 +54,7 @@ const ThingsToDo = () => {
 								</p>
 								<SVG type='skateboard' width='300' />
 							</div>
-						</Link>
+						</a>
 					</div>
 
 					<h2 className='title has-text-centered custom-mt-5'>

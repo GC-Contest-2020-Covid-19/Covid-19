@@ -58,6 +58,10 @@ export const Container = styled.div`
     .custom-black {
         color: #000;
     }
+
+    .custom-white {
+        color: #fff;
+    }
     
     .custom-nav-link:hover {
         background-color: ${hoverBgColor};
