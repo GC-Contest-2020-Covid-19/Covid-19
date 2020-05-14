@@ -71,7 +71,7 @@ const ProgressionByCountry = ({ fromDayOne }) => {
 	return (
 		<div className='custom-m-3 has-text-centered'>
 			<small>Click on parameters to select or unselect them</small>
-			{fromDayOne ? <Line options={{ responsive: true }} data={data} /> : null}
+			{fromDayOne ? <Line options={{ responsive: true, maintainAspectRatio: false }} data={data}  width={chartWidth} height={chartHeight} /> : null}
 		</div>
 	);
 };
@@ -81,3 +81,6 @@ const mapStateToProps = ({ fromDayOne }) => {
 };
 
 export default connect(mapStateToProps)(ProgressionByCountry);
+
+const chartWidth = window.innerWidth * 0.7
+const chartHeight = window.innerHeight * 0.3

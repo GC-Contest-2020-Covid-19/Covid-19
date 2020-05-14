@@ -28,7 +28,7 @@ const DisplaySummary = ({ summary, setSummary }) => {
 	return (
 		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
 			<div className='custom-mb-5' id='countries'>
-				<h3 className='is-size-3'>Find one or multiple countries</h3>
+				<p className='is-size-2-desktop is-size-3-tablet is-size-4-mobile'>Find one or multiple countries</p>
 
 				<form className='field is-grouped' onSubmit={handleSubmit}>
 					<p className='control is-expanded'>
@@ -45,7 +45,7 @@ const DisplaySummary = ({ summary, setSummary }) => {
 					</button>
 				</form>
 
-				<h3 className='is-size-4'>Or search by continents</h3>
+				<h3 className='is-size-4-desktop is-size-5-tablet is-size-6-mobile'>Or search by continents</h3>
 				<div className='select custom-mb-3'>
 					<select value={continent} onChange={handleSelectChange}>
 						<option value=''>Choose a Continent</option>

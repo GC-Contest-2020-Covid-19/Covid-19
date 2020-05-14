@@ -36,12 +36,12 @@ const SummaryChart = ({ place }) => {
 			)}
 			{place.affectedCountries && (
 				<>
-					<h3 className='is-size-2'>Worldwide</h3>
-					<p>Affected Countries: {place.affectedCountries}</p>
+					<h3 className='is-size-3-desktop is-size-4-tablet is-size-5-mobile'>Worldwide</h3>
+					<p className='is-size-4-desktop is-size-5-tablet is-size-6-mobile'>Affected Countries: {place.affectedCountries}</p>
 				</>
 			)}
 			<small>Click on parameters to select or unselect them</small>
-			<Doughnut options={{ responsive: true }} data={data} />
+			<Doughnut options={{ responsive: true, maintainAspectRatio: false }} data={data} width={chartWidth} height={chartHeight}/>
 			<p>
 				As of{" "}
 				{moment(new Date(place.updated).toISOString()).format(
@@ -53,3 +53,6 @@ const SummaryChart = ({ place }) => {
 };
 
 export default SummaryChart;
+
+const chartWidth = window.innerWidth * 0.7
+const chartHeight = window.innerHeight * 0.3

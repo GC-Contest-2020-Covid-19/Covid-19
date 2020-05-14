@@ -97,8 +97,8 @@ export const Model = () => {
             ],
         }
         return (
-            <div className='custom-ml-5 custom-mr-5' style={lineStyle}>
-                <Line options={{ responsive: true }} data={data}></Line>
+            <div className='custom-ml-5 custom-mr-5'>
+                <Line options={{ responsive: true, maintainAspectRatio: false }} data={data} width={chartWidth} height={chartHeight}></Line>
             </div>
         )
     }else{
@@ -108,7 +108,5 @@ export const Model = () => {
     }
 }
 
-const lineStyle = {
-    width: '70vw',
-    heigth: '70vh'
-}
+const chartWidth = window.innerWidth * 0.7
+const chartHeight = window.innerHeight * 0.4

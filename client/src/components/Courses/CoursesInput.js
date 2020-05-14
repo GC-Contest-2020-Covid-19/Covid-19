@@ -65,8 +65,8 @@ export const CoursesInput = () => {
 
 	return (
 		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
-			<h3 className='is-size-3'>University Courses</h3>
-			<p className='is-size-5'>Expand your knowledge with a university course!</p>
+			<h3 className='is-size-2-desktop is-size-3-tablet is-size-4-mobile'>University Courses</h3>
+			<p className='is-size-4-desktop is-size-5-tablet is-size-6-mobile'>Expand your knowledge with a university course!</p>
 			<form
 				onSubmit={SubmitHandler}
 				className='field'>

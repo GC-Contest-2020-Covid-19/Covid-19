@@ -23,7 +23,7 @@ const ProgressionByCountrySelect = ({
 	};
 	return (
 		<div className='custom-ml-5 custom-mr-5 custom-mt-3'>
-			<h2 className='is-size-2'>Select a country to show progression</h2>
+			<h2 className='is-size-2-desktop is-size-3-tablet is-size-4-mobile'>Select a country to show progression</h2>
 			<div className='select'>
 				<select
 					value={value.country}
@@ -48,7 +48,7 @@ const ProgressionByCountrySelect = ({
 						))}
 				</select>
 			</div>
-			<h2 className='is-size-2'>Select a timeline</h2>
+			<h2 className='is-size-4-desktop is-size-5-tablet is-size-6-mobile'>Select a timeline</h2>
 			<div className='select'>
 				<select
 					value={value.timeline}

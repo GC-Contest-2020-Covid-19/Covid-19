@@ -11,6 +11,7 @@ import Gifts from "./Gifts";
 import Reading from "./Reading";
 import Youtube from "./Youtube";
 import Tests from "./Tests";
+import Sun from "./Sun";
 
 const SVG = ({ type, width, socialType }) => {
 	const svgs = {
@@ -26,6 +27,7 @@ const SVG = ({ type, width, socialType }) => {
 		gifts: <Gifts width={width} />,
 		tests: <Tests width={width} />,
 		food: <Food width={width} />,
+		sun: <Sun width={width} />
 	};
 	return svgs[type];
 };

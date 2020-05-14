@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { changeTheme } from "../../redux/actions/userActions";
 import { useDispatch } from "react-redux";
+import SVG from "../SVGs/SVG";
 
 const Navbar = () => {
 	const [active, setActive] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
 					</Link>
 
 					<a className='navbar-item' onClick={ToggleTheme}>
-						Toggle Darkmode
+						<SVG className='sun' type='sun' width={25}/>Toggle Darkmode
 					</a>
 
 					<a
