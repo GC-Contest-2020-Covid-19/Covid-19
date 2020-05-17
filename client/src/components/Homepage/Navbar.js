@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { changeTheme } from "../../redux/actions/userActions";
-import { useDispatch } from "react-redux";
-import SVG from "../SVGs/SVG";
+import { useDispatch, useSelector } from "react-redux";
+
 
 const Navbar = () => {
 	const [active, setActive] = useState(false);
@@ -13,6 +13,7 @@ const Navbar = () => {
 		dispatch(changeTheme());
 	};
 
+	const theme = useSelector(state => state.user.theme)
 	return (
 		<nav className='navbar' role='navigation' aria-label='main navigation'>
 			<div className='container'>
@@ -21,8 +22,8 @@ const Navbar = () => {
 						Covid-19
 					</Link>
 
-					<a className='navbar-item' onClick={ToggleTheme}>
-						<SVG className='sun' type='sun' width={25}/>Toggle Darkmode
+					<a className='navbar-item is-size-5-desktop is-size-6-tablet is-size-7-mobile' onClick={ToggleTheme}>
+						{ theme === 'light' ? 'Enable Darkmode' : 'Enable Lightmode'}
 					</a>
 
 					<a
@@ -92,6 +93,11 @@ const Navbar = () => {
 								<li className='navbar-item'>
 									<Link className='is-arrowless custom-nav-link custom-p-1' to='/courses'>
 										Courses
+									</Link>
+								</li>
+								<li className='navbar-item'>
+									<Link className='is-arrowless custom-nav-link custom-p-1' to='/donations'>
+										Donations
 									</Link>
 								</li>
 							</ul>

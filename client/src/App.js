@@ -43,6 +43,9 @@ import { Model } from "./components/Modeling/Model";
 import { CoursesInput } from "./components/Courses/CoursesInput";
 import { CoursesList } from "./components/Courses/CoursesList";
 
+// donations
+import Donations from './components/Donations/DonationsList'
+
 function App() {
 	const theme = useSelector((state) => state.user.theme);
 	return (
@@ -85,6 +88,10 @@ function App() {
 						<Route path='/courses'>
 							<CoursesInput />
 							<CoursesList />
+						</Route>
+
+						<Route path='/donations'>
+							<Donations />
 						</Route>
 
 						<Route exact path='/info' component={InfoDisplay} />

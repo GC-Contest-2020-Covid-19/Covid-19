@@ -23,7 +23,7 @@ const fetchAllCountries = async () => {
 };
 
 const fetchMyths = async () => {
-	const { data } = await axios.get(`${ownServerUrl}/api/myths`);
+	const { data } = await axios.get(`${ownServerUrl}/api/info/myths`);
 	return data;
 };
 

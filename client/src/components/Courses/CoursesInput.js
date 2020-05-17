@@ -89,7 +89,7 @@ export const CoursesInput = () => {
 };
 
 function getCoursera(query) {
-	return fetch(encodeURI(SERVER_PATH + `api/coursera/${query}`), {
+	return fetch(encodeURI(SERVER_PATH + `api/courses/coursera/${query}`), {
 		mode: "cors",
 	})
 		.then((response) => {
@@ -106,7 +106,7 @@ function getCoursera(query) {
 }
 
 function getEDX(query) {
-	return fetch(encodeURI(SERVER_PATH + `api/edx/${query}`), {
+	return fetch(encodeURI(SERVER_PATH + `api/courses/edx/${query}`), {
 		mode: "cors",
 	})
 		.then((response) => {

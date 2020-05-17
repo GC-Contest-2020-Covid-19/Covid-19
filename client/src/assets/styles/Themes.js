@@ -37,10 +37,6 @@ const hoverBgColor = theme('theme', {
     dark: '#8bc6e6'
 })
 
-const sunColor = theme('theme', {
-    light: '#000',
-    dark: '#fff'
-})
 
 export const Container = styled.div`
     
@@ -72,9 +68,4 @@ export const Container = styled.div`
         background-color: ${hoverBgColor};
         color: ${hoverColor};
     }
-    // .sun {
-    //     fill: ${sunColor};
-    //     filter: invert(100%);
-    // }
-    
 `

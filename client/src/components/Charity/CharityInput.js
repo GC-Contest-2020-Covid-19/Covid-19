@@ -82,7 +82,7 @@ export const CharityInput = () => {
 };
 
 function getCharities(city, amount) {
-	return fetch(SERVER_PATH + `api/charity/${city}/${amount}`)
+	return fetch(SERVER_PATH + `api/help/charity/${city}/${amount}`)
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error("Network response was not ok");

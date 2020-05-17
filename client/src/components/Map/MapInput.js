@@ -224,7 +224,7 @@ function getTestStations(state) {
 
 // returns information on a location from an adress
 function getGeocode(address) {
-	return fetch(encodeURI(SERVER_PATH + `api/geocoding/${address}`), {
+	return fetch(encodeURI(SERVER_PATH + `api/map/geocoding/${address}`), {
 		mode: "cors",
 	})
 		.then((response) => {
@@ -245,7 +245,7 @@ function getGeocodeReverse(loc) {
 	return fetch(
 		encodeURI(
 			SERVER_PATH +
-				`api/geocoding_reverse/${loc.coords.latitude}/${loc.coords.longitude}`
+				`api/map/geocoding_reverse/${loc.coords.latitude}/${loc.coords.longitude}`
 		),
 		{ mode: "cors" }
 	)
@@ -267,7 +267,7 @@ function getFoodBanks(city) {
 	// fetch FoodBanks from own api
 	return fetch(
 		encodeURI(
-			SERVER_PATH + `api/foodbanks/${city.toLowerCase().replace(" ", "+")}`
+			SERVER_PATH + `api/map/foodbanks/${city.toLowerCase().replace(" ", "+")}`
 		),
 		{ mode: "cors" }
 	)
