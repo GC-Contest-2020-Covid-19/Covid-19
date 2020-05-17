@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Donation } from './Donation'
 
-// const SERVER_PATH = "https://covid19-gc.herokuapp.com/";
-const SERVER_PATH = 'http://127.0.0.1:5000/'
+const SERVER_PATH = "https://covid19-gc.herokuapp.com/";
 
 export class Donations extends Component {
     constructor(props) {
