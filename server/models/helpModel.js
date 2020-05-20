@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const helpSchema = mongoose.Schema({
     date: {
         type: Date,
         default: Date.now,
-        required: true
+        required: true,
     },
     donator: {
         type: String,
@@ -12,16 +12,16 @@ const helpSchema = mongoose.Schema({
     },
     donation: {
         type: String,
-        required: true
+        required: true,
     },
     location: {
         type: String,
-        required: true
+        required: true,
     },
     contact: {
         type: String,
-        required: true
-    }
-})
+        required: true,
+    },
+});
 
-module.exports = mongoose.model('HelpObject', helpSchema)
+module.exports = mongoose.model("HelpObject", helpSchema);

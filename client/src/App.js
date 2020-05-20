@@ -44,66 +44,66 @@ import { CoursesInput } from "./components/Courses/CoursesInput";
 import { CoursesList } from "./components/Courses/CoursesList";
 
 // donations
-import Donations from './components/Donations/DonationsList'
+import Donations from "./components/Donations/DonationsList";
 
 function App() {
-	const theme = useSelector((state) => state.user.theme);
-	return (
-		<Router>
-			<ThemeProvider theme={{ theme: theme }}>
-				<Container>
-					{/* just so the text grows on bigger screens */}
-					<div
-						className='is-size-4-desktop is-size-5-tablet'
-						style={{ minWidth: "100vw", minHeight: "100vh" }}>
-						<Navbar />
+    const theme = useSelector((state) => state.user.theme);
+    return (
+        <Router>
+            <ThemeProvider theme={{ theme: theme }}>
+                <Container>
+                    {/* just so the text grows on bigger screens */}
+                    <div
+                        className="is-size-4-desktop is-size-5-tablet"
+                        style={{ minWidth: "100vw", minHeight: "100vh" }}>
+                        <Navbar />
 
-						<Route exact path='/' component={Homepage} />
+                        <Route exact path="/" component={Homepage} />
 
-						<Route exact path='/summary' component={DisplaySummary} />
+                        <Route exact path="/summary" component={DisplaySummary} />
 
-						<Route exact path='/progression'>
-							<ProgressionByCountrySelect />
-							<ProgressionByCountry />
-						</Route>
+                        <Route exact path="/progression">
+                            <ProgressionByCountrySelect />
+                            <ProgressionByCountry />
+                        </Route>
 
-						{/* display useful information on a map*/}
-						<Route path='/map'>
-							<MapInput />
-							<CoronaMap />
-						</Route>
+                        {/* display useful information on a map*/}
+                        <Route path="/map">
+                            <MapInput />
+                            <CoronaMap />
+                        </Route>
 
-						{/* diplay charities */}
-						<Route path='/charities'>
-							<CharityInput />
-							<CharityList />
-						</Route>
+                        {/* diplay charities */}
+                        <Route path="/charities">
+                            <CharityInput />
+                            <CharityList />
+                        </Route>
 
-						{/* display predicition model */}
-						<Route path='/model'>
-							<ModelingInput />
-							<Model />
-						</Route>
+                        {/* display predicition model */}
+                        <Route path="/model">
+                            <ModelingInput />
+                            <Model />
+                        </Route>
 
-						<Route path='/courses'>
-							<CoursesInput />
-							<CoursesList />
-						</Route>
+                        <Route path="/courses">
+                            <CoursesInput />
+                            <CoursesList />
+                        </Route>
 
-						<Route path='/donations'>
-							<Donations />
-						</Route>
+                        <Route path="/donations">
+                            <Donations />
+                        </Route>
 
-						<Route exact path='/info' component={InfoDisplay} />
+                        <Route exact path="/info" component={InfoDisplay} />
 
-						<Route exact path='/info/myths' component={Myths} />
+                        <Route exact path="/info/myths" component={Myths} />
 
-						<Route exact path='/about' component={About} />
-					</div>
-				</Container>
-			</ThemeProvider>
-		</Router>
-	);
+                        <Route exact path="/about" component={About} />
+                    </div>
+                </Container>
+            </ThemeProvider>
+        </Router>
+    );
 }
 
 export default App;

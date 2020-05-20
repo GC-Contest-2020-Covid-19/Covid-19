@@ -5,14 +5,14 @@ import Features from "./Features";
 import Footer from "./Footer";
 
 const Homepage = () => {
-	return (
-		<>
-			<Intro />
-			<Features />
-			<ThingsToDo />
-			<Footer />
-		</>
-	);
+    return (
+        <>
+            <Intro />
+            <Features />
+            <ThingsToDo />
+            <Footer />
+        </>
+    );
 };
 
 export default Homepage;

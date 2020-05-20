@@ -13,21 +13,21 @@ import Youtube from "./Youtube";
 import Tests from "./Tests";
 
 const SVG = ({ type, width, socialType }) => {
-	const svgs = {
-		pieChart: <PieChart width={width} />,
-		lineChart: <LineChart width={width} />,
-		washHands: <WashHands width={width} />,
-		medical: <MedicalDoc width={width} />,
-		distance: <SocialDistance width={width} />,
-		socials: <Socials socialType={socialType} />,
-		reading: <Reading width={width} />,
-		youtube: <Youtube width={width} />,
-		skateboard: <Skateboard width={width} />,
-		gifts: <Gifts width={width} />,
-		tests: <Tests width={width} />,
-		food: <Food width={width} />
-	};
-	return svgs[type];
+    const svgs = {
+        pieChart: <PieChart width={width} />,
+        lineChart: <LineChart width={width} />,
+        washHands: <WashHands width={width} />,
+        medical: <MedicalDoc width={width} />,
+        distance: <SocialDistance width={width} />,
+        socials: <Socials socialType={socialType} />,
+        reading: <Reading width={width} />,
+        youtube: <Youtube width={width} />,
+        skateboard: <Skateboard width={width} />,
+        gifts: <Gifts width={width} />,
+        tests: <Tests width={width} />,
+        food: <Food width={width} />,
+    };
+    return svgs[type];
 };
 
 export default SVG;
