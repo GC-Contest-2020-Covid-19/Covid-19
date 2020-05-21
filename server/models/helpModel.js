@@ -22,6 +22,11 @@ const helpSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    claimed: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
 });
 
 module.exports = mongoose.model("HelpObject", helpSchema);

@@ -44,7 +44,7 @@ import { CoursesInput } from "./components/Courses/CoursesInput";
 import { CoursesList } from "./components/Courses/CoursesList";
 
 // donations
-import Donations from "./components/Donations/DonationsList";
+import { DonationList } from "./components/Donations/DonationList";
 
 function App() {
     const theme = useSelector((state) => state.user.theme);
@@ -91,7 +91,7 @@ function App() {
                         </Route>
 
                         <Route path="/donations">
-                            <Donations />
+                            <DonationList />
                         </Route>
 
                         <Route exact path="/info" component={InfoDisplay} />

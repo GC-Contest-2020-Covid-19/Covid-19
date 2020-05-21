@@ -30,9 +30,9 @@ router.get("/charity/:city/:amount", async (req, res) => {
 // donations
 router.get("/don/get", async (req, res) => {
     try {
-        const donations = await HelpObject.find();
+        const donations = await HelpObject.find().sort({ claimed: "asc" });
         res.json({ success: true, data: donations });
-    } catch {
+    } catch (err) {
         res.json({ success: false, message: err });
     }
 });
@@ -54,6 +54,15 @@ router.post("/don/add", (req, res) => {
             console.log(err);
             res.json({ success: false, message: err });
         });
+});
+
+router.get("/don/claim/:donId", async (req, res) => {
+    try {
+        const claimedDonation = await HelpObject.updateOne({ _id: req.params.donId }, { $set: { claimed: true } });
+        res.json({ success: true, data: claimedDonation });
+    } catch (err) {
+        res.json({ success: false, message: err });
+    }
 });
 
 module.exports = router;
