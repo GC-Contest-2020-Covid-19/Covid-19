@@ -1,3 +1,14 @@
+# credentials
+.env
+
+# Server
+node_modules
+
+# vscode
+.vscode/
+.vscode/launch.json
+
+
 # dependencies
 node_modules
 .pnp

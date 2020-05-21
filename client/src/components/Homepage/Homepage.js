@@ -1,18 +1,18 @@
 import React from "react";
-import CTA from "./CTA";
 import Intro from "./Intro";
+import ThingsToDo from "./ThingsToDo";
 import Features from "./Features";
 import Footer from "./Footer";
 
 const Homepage = () => {
-	return (
-		<>
-			<Intro />
-			<Features />
-			<CTA />
-			<Footer />
-		</>
-	);
+    return (
+        <>
+            <Intro />
+            <Features />
+            <ThingsToDo />
+            <Footer />
+        </>
+    );
 };
 
 export default Homepage;

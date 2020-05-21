@@ -1,31 +1,33 @@
 import axios from "axios";
-const BASEURL = "https://api.covid19api.com";
 const ownServerUrl = "https://covid19-gc.herokuapp.com";
 
 const fetchSummary = async () => {
-	const { data } = await axios.get(`${BASEURL}/summary`);
-	return data;
+    const responseCountries = await axios.get("https://disease.sh/v2/countries");
+    const dataCountries = await responseCountries.data;
+
+    const responseGlobal = await axios.get("https://disease.sh/v2/all");
+    const dataGlobal = await responseGlobal.data;
+
+    return { dataCountries, dataGlobal };
 };
 
-const fetchDayoneByCountry = async (country) => {
-	const { data } = await axios.get(
-		`${BASEURL}/total/dayone/country/${country}`
-	);
-	return data;
+const fetchDayoneByCountry = async (countryISO, timeline) => {
+    const { data } = await axios.get(`https://disease.sh/v2/historical/${countryISO}?lastdays=${timeline}`);
+    return data;
 };
 const fetchAllCountries = async () => {
-	const { data } = await axios.get(`${BASEURL}/countries`);
-	return data;
+    const { data } = await axios.get(`https://api.covid19api.com/countries`);
+    return data;
 };
 
 const fetchMyths = async () => {
-	const { data } = await axios.get(`${ownServerUrl}/api/myths`);
-	return data;
+    const { data } = await axios.get(`${ownServerUrl}/api/info/myths`);
+    return data;
 };
 
 export default {
-	fetchSummary,
-	fetchDayoneByCountry,
-	fetchAllCountries,
-	fetchMyths,
+    fetchSummary,
+    fetchDayoneByCountry,
+    fetchAllCountries,
+    fetchMyths,
 };

@@ -16,17 +16,19 @@ const initState = {
     testing: 0,
     time: 0,
     lag: 0,
-    population: 0
-}
+    population: 0,
+};
 
 const modelingReducer = (state = initState, action) => {
-    switch(action.type){
-        case 'CLEAR_MODELING':
-            return{
-                ...initState
-            }
-        case 'CHANGE_MODELING_PARAMS':
-            return{
+    switch (action.type) {
+        case "CLEAR_MODELING":
+            return {
+                ...initState,
+            };
+            // eslint-disable-next-line
+            break;
+        case "CHANGE_MODELING_PARAMS":
+            return {
                 ...state,
                 S: action.payload[0],
                 I: action.payload[1],
@@ -35,12 +37,15 @@ const modelingReducer = (state = initState, action) => {
                 testing: action.payload[4],
                 time: action.payload[5],
                 lag: action.payload[6],
-                population: action.payload[7]
-            }
+                population: action.payload[7],
+            };
+            // eslint-disable-next-line
+            break;
         default:
-            return state
+            return state;
+            // eslint-disable-next-line
+            break;
     }
-}
+};
 
-
-export default modelingReducer
+export default modelingReducer;
