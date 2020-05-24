@@ -1,5 +1,5 @@
 /* Get the Location of the User and fetch information afterwards */
-import React from "react";
+import React, { useState } from "react";
 
 // redux
 import { useDispatch } from "react-redux";
@@ -23,7 +23,11 @@ const SERVER_PATH = "https://covid19-gc.herokuapp.com/";
 export const MapInput = () => {
     const dispatch = useDispatch();
 
+    const [btn, setBtn] = useState(true);
+
     const HandleClick = () => {
+        setBtn(false);
+
         dispatch(changeMapRequested(true));
         navigator.geolocation.getCurrentPosition(function (loc) {
             // set the user's position
@@ -88,6 +92,7 @@ export const MapInput = () => {
                             dispatch(addTestResult(-1));
                         }
                     }
+                    setBtn(true);
                 });
 
                 // clear previously fetched foodBanks
@@ -133,7 +138,7 @@ export const MapInput = () => {
             <p className="is-size-4-desktop is-size-5-tablet is-size-6-mobile">
                 Test stations and food banks near you. We currently only support the USA.
             </p>
-            <button className="button is-rounded" onClick={HandleClick}>
+            <button className="button is-rounded" onClick={HandleClick} disabled={btn ? false : true}>
                 Fetch information
             </button>
         </div>

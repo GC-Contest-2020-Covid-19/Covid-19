@@ -2,7 +2,7 @@ const initState = {
     coordinates: "NOT SET",
     us_state: "NOT SET",
     city: "NOT SET",
-    theme: JSON.parse(localStorage.getItem("theme")) || "light",
+    theme: localStorage.getItem("theme") || "light",
 };
 
 const userReducer = (state = initState, action) => {
@@ -31,7 +31,7 @@ const userReducer = (state = initState, action) => {
         case "CHANGE_THEME":
             let theme;
             state.theme === "light" ? (theme = "dark") : (theme = "light");
-            localStorage.setItem("theme", JSON.stringify(theme));
+            localStorage.setItem("theme", theme);
             return {
                 ...state,
                 theme: theme,

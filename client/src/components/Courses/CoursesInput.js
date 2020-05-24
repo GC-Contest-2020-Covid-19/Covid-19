@@ -17,9 +17,11 @@ export const CoursesInput = () => {
     const dispatch = useDispatch();
 
     const [query, setQuery] = useState("");
+    const [btn, setBtn] = useState(true);
 
     const SubmitHandler = (e) => {
         e.preventDefault();
+        setBtn(false);
         dispatch(clearCourses());
         dispatch(changeCourseCouseraStatus(true));
         dispatch(changeCourseEdxStatus(true));
@@ -44,6 +46,7 @@ export const CoursesInput = () => {
                     })
                 );
             }
+            setBtn(true);
         });
         getEDX(query).then((json) => {
             if (json === false || json.success === false) {
@@ -60,6 +63,7 @@ export const CoursesInput = () => {
                     })
                 );
             }
+            setBtn(true);
         });
     };
 
@@ -80,7 +84,7 @@ export const CoursesInput = () => {
                         onChange={(e) => setQuery(e.target.value)}
                     />
                 </div>
-                <button type="submit" className="button is-rounded">
+                <button type="submit" className="button is-rounded" disabled={btn ? false : true}>
                     Search!
                 </button>
             </form>

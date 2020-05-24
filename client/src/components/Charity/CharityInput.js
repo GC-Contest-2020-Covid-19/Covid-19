@@ -9,15 +9,16 @@ const SERVER_PATH = "https://covid19-gc.herokuapp.com/";
 export const CharityInput = () => {
     const dispatch = useDispatch();
 
-    // hooks for the input fields
     const [city, setCity] = useState("");
     const [amount, setAmount] = useState("");
-
-    // hook for error message
+    const [btn, setBtn] = useState(true);
     const [showError, setError] = useState(false);
 
     const SubmitHandler = (e) => {
         e.preventDefault();
+
+        setBtn(false);
+
         dispatch(clearCharities());
 
         // check the inputed number
@@ -35,8 +36,10 @@ export const CharityInput = () => {
                     for (let i = 0; i < json.data.length; i++) {
                         dispatch(addCharity(createCharity(json.data[i])));
                     }
+                    setBtn(true);
                 } else {
                     dispatch(changeCharityStatus(false));
+                    setBtn(true);
                 }
             })
             .catch((error) => {
@@ -51,7 +54,7 @@ export const CharityInput = () => {
             <p className="is-size-4-desktop is-size-5-tablet is-size-6-mobile">
                 You need help or want to donate? Find charities near you! We currently only support the USA.
             </p>
-            <form onSubmit={SubmitHandler} className="">
+            <form onSubmit={SubmitHandler}>
                 <input
                     className="input is-rounded custom-mb-3"
                     type="text"
@@ -68,7 +71,7 @@ export const CharityInput = () => {
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
                 />
-                <button type="submit" className="button is-rounded">
+                <button type="submit" className="button is-rounded" disabled={btn ? false : true}>
                     Search
                 </button>
             </form>
